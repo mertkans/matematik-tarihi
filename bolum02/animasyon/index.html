@@ -1,0 +1,1228 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Matematik Tarihi · Mısır Dönemi</title>
+<link rel="stylesheet" href="../../animasyon/vendor/inter/index.css">
+<link rel="stylesheet" href="../../animasyon/vendor/fraunces/index.css">
+<link rel="stylesheet" href="../../animasyon/vendor/fraunces/wght-italic.css">
+<style>
+:root{
+  --bg:#0D1020; --bg2:#151A30; --ink:#F4EEE3; --mute:#8F96B2; --dim:#555C7A;
+  --acc:#FF6B3D; --gold:#FFC24B; --teal:#38D6C4; --sky:#6FA8FF; --rose:#FF5C8A;
+  --card:rgba(255,255,255,.045); --line:rgba(255,255,255,.12);
+  --serif:'Fraunces Variable',Georgia,serif; --sans:'Inter Variable',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#05060c;height:100%;overflow:hidden;color:var(--ink);font-family:var(--sans)}
+#wrap{position:absolute;inset:0 0 64px 0;display:flex;align-items:center;justify-content:center}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--bg);flex:none;transform-origin:center center}
+body.render #wrap{inset:0;display:block}
+body.render #stage{transform:none!important}
+body.render #ctrl{display:none}
+
+/* arka plan */
+#bg{position:absolute;inset:0;overflow:hidden}
+.blob{position:absolute;width:1400px;height:1400px;border-radius:50%}
+#blob1{left:-500px;top:-600px;background:radial-gradient(closest-side,rgba(255,194,75,.15),rgba(255,194,75,0))}
+#blob2{right:-600px;bottom:-700px;background:radial-gradient(closest-side,rgba(56,120,255,.16),rgba(56,120,255,0))}
+#grain{position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;background-size:256px 256px}
+
+/* sabit çerçeve */
+#brand{position:absolute;left:120px;top:52px;font:600 17px var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--mute);z-index:20}
+#brand b{color:var(--acc);font-weight:700}
+#sceneNo{position:absolute;right:120px;top:52px;font:500 17px var(--sans);letter-spacing:.14em;color:var(--mute);z-index:20;text-align:right}
+#sceneNo b{color:var(--ink);font-weight:700}
+#progress{position:absolute;left:0;bottom:0;height:5px;width:100%;background:linear-gradient(90deg,var(--acc),var(--gold));transform-origin:0 50%;z-index:20}
+
+.scene{position:absolute;inset:0;opacity:0;visibility:hidden}
+.full{position:absolute;inset:0;width:1920px;height:1080px}
+.abs{position:absolute}
+.head{position:absolute;left:120px;top:118px;z-index:5}
+.eyebrow{font:650 21px var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--acc)}
+.h1{font:500 74px/1.05 var(--serif);margin-top:14px;letter-spacing:-.01em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:28px}
+.pill{display:inline-flex;align-items:center;gap:12px;padding:14px 28px;border-radius:999px;border:1px solid var(--line);background:var(--card);font:600 30px var(--sans)}
+.ctitle{font:700 20px var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--acc)}
+.cbig{font:600 46px/1.1 var(--serif);margin-top:8px}
+.csub{font:500 24px/1.4 var(--sans);color:#C9CDE0;margin-top:10px}
+.tag{display:inline-block;padding:8px 18px;border-radius:999px;font:700 19px var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.tag.r{background:rgba(255,92,138,.14);color:var(--rose);border:1px solid rgba(255,92,138,.5)}
+.tag.t{background:rgba(56,214,196,.12);color:var(--teal);border:1px solid rgba(56,214,196,.45)}
+.tag.g{background:rgba(255,194,75,.12);color:var(--gold);border:1px solid rgba(255,194,75,.5)}
+.cap{position:absolute;left:0;right:0;text-align:center;font:italic 400 40px var(--serif)}
+.cap b{color:var(--gold);font-weight:600}
+
+/* kesir */
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1;margin:0 .06em}
+.fr>span:first-child{border-bottom:.055em solid currentColor;padding:0 .14em .06em}
+.fr>span:last-child{padding-top:.06em}
+
+/* 1 giriş */
+.floaters span{position:absolute;font-family:var(--serif);color:var(--ink);line-height:1;white-space:nowrap}
+.intro{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.mega{font:600 180px/1 var(--serif);letter-spacing:-.025em;perspective:800px}
+.mega .ch{display:inline-block}
+.intro-sub{font:italic 300 84px/1 var(--serif);color:var(--acc);margin-top:14px}
+.rule{width:220px;height:3px;background:var(--acc);margin:42px 0 46px}
+.chips{display:flex;gap:24px}
+.chip{padding:18px 32px;border:1px solid var(--line);border-radius:999px;background:rgba(13,16,32,.7);font:500 29px var(--sans)}
+.chip b{color:var(--acc);margin-right:14px;font-weight:750}
+
+/* 2 çağlar */
+.seg-lab{position:absolute;width:280px;text-align:center}
+.seg-lab .t{font:650 27px var(--sans)}
+.seg-lab .s{font:500 19px var(--sans);color:var(--mute);margin-top:4px}
+.seg-date{position:absolute;width:280px;text-align:center;font:600 20px var(--sans);color:var(--mute);font-variant-numeric:tabular-nums}
+.life{position:absolute;left:120px;top:610px;width:1060px;height:370px;padding:30px 40px}
+.life .row{display:flex;justify-content:space-between;margin-top:18px}
+.life .it{width:300px;text-align:center;position:relative}
+.life svg{width:220px;height:170px}
+.life .n{font:600 30px var(--serif);margin-top:6px}
+.life .x{position:absolute;left:30px;right:30px;top:80px;height:6px;background:var(--rose);border-radius:3px;transform-origin:0 50%;transform:rotate(-18deg)}
+.need{position:absolute;left:1240px;top:610px;width:560px;height:370px;padding:30px 40px}
+.need svg{width:480px;height:290px;margin-top:4px}
+
+/* 3 harita */
+.m-sphere{fill:#10152B}
+.m-land{fill:#232A4D;stroke:#3A4372;stroke-width:1;vector-effect:non-scaling-stroke}
+.m-egy{fill:rgba(255,194,75,.16);stroke:rgba(255,194,75,.5);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.m-irq{fill:rgba(56,214,196,.12);stroke:rgba(56,214,196,.45);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.m-river{fill:none;stroke:#6FA8FF;stroke-linecap:round;stroke-linejoin:round}
+.m-mark{position:absolute;left:0;top:0;width:0;height:0}
+.m-in{position:absolute;left:0;top:0}
+.m-dot{position:absolute;left:-10px;top:-10px;width:20px;height:20px;border-radius:50%;background:var(--c);box-shadow:0 0 0 6px rgba(255,255,255,.12),0 0 30px var(--c)}
+.m-ring{position:absolute;left:-10px;top:-10px;width:20px;height:20px;border-radius:50%;border:3px solid var(--c)}
+.m-lab{position:absolute;left:26px;top:-30px;white-space:nowrap;padding:9px 18px;border-radius:14px;background:rgba(13,16,32,.85);border:1px solid var(--line);border-left:4px solid var(--c)}
+.m-lab.l{left:auto;right:26px;border-left:1px solid var(--line);border-right:4px solid var(--c)}
+.m-lab .t{font:650 28px var(--sans)}
+.m-lab .s{font:500 18px var(--sans);color:var(--mute);margin-top:2px}
+.m-region{position:absolute;left:0;top:0;font:600 22px var(--sans);letter-spacing:.32em;text-transform:uppercase;color:rgba(244,238,227,.45);white-space:nowrap;transform-origin:0 0}
+.m-region.big{font:600 46px var(--serif);letter-spacing:.3em;color:rgba(255,194,75,.5)}
+.m-region.sea{font:italic 400 30px var(--serif);letter-spacing:.12em;text-transform:none;color:rgba(111,168,255,.75)}
+.m-region.riv{font:650 22px var(--sans);letter-spacing:.14em;color:#9BC2FF}
+.map-shade{position:absolute;left:0;top:0;width:1920px;height:330px;background:linear-gradient(180deg,rgba(13,16,32,.95),rgba(13,16,32,0))}
+
+/* 4 dönemler */
+.pl{position:absolute;text-align:center;white-space:nowrap}
+.pl .t{font:650 24px var(--sans)}
+.pl .s{font:500 18px var(--sans);color:var(--mute);margin-top:3px;font-variant-numeric:tabular-nums}
+.pl.ara .t{font:600 19px var(--sans);color:#B9BED6}
+.tick{position:absolute;font:600 17px var(--sans);color:var(--dim);transform:translateX(-50%);letter-spacing:.04em}
+.callout{position:absolute;left:560px;top:745px;width:860px;height:230px;padding:28px 40px;border-color:rgba(255,107,61,.5)}
+
+/* 5 ilişki */
+.illus{position:absolute;left:120px;top:290px;width:1100px;height:640px;border-radius:28px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.illus svg{width:1100px;height:640px;display:block}
+.tri{position:absolute;left:1260px;top:290px;width:540px;height:640px}
+.tri svg{width:540px;height:640px}
+
+/* 6 papirüs */
+.flag{position:absolute;padding:12px 24px;border-radius:999px;font:600 26px var(--sans);background:rgba(13,16,32,.8);border:1px solid var(--line)}
+.plab{position:absolute;text-align:center;font:650 22px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.plab b{display:block;font:600 40px var(--serif);letter-spacing:0;text-transform:none;color:var(--ink);margin-bottom:6px}
+
+/* 7 rhind */
+.stop{position:absolute;width:300px;text-align:center}
+.stop .y{font:600 44px var(--serif);font-variant-numeric:tabular-nums}
+.stop .d{font:500 21px/1.3 var(--sans);color:var(--mute);margin-top:8px}
+.fcard{position:absolute;top:800px;height:180px;padding:26px 36px}
+.chiprow{display:flex;gap:14px;margin-top:16px}
+.chiprow span{padding:10px 20px;border-radius:999px;background:rgba(255,194,75,.12);border:1px solid rgba(255,194,75,.45);color:var(--gold);font:600 24px var(--sans)}
+
+/* 8 moskova */
+.utab{position:absolute;left:120px;top:290px;width:1120px;height:690px;padding:30px 36px}
+.utab .grid{display:grid;grid-template-columns:auto auto auto;justify-content:start;gap:10px 14px;margin-top:20px}
+.utab .e{font:500 21px var(--sans);font-variant-numeric:tabular-nums;padding:11px 12px;border-radius:12px;background:rgba(255,255,255,.035);white-space:nowrap}
+.utab .e .two{color:var(--acc);font-weight:700}
+.utab .e .u{color:var(--ink)}
+.uexp{position:absolute;left:1270px;top:290px;width:530px;height:690px;padding:40px}
+.uexp .big{font:600 92px/1 var(--serif);margin-top:40px;text-align:center}
+.uexp .arrow{font:500 60px var(--sans);color:var(--acc);text-align:center;margin:20px 0}
+.stat{position:absolute;top:720px;height:250px;padding:28px 36px}
+.bar{height:34px;border-radius:8px;transform-origin:0 50%}
+
+/* 9 sayılar */
+.gcard{position:absolute;top:290px;width:226px;height:390px;text-align:center;padding:22px 10px}
+.gcard .v{font:700 30px var(--sans);font-variant-numeric:tabular-nums}
+.gcard svg{width:150px;height:190px;margin-top:14px}
+.gcard .n{font:500 20px/1.3 var(--sans);color:var(--mute);margin-top:12px}
+.ex{position:absolute;left:120px;right:120px;top:720px;height:260px}
+.ex .q{position:absolute;left:0;top:0;font:700 20px var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--acc)}
+
+/* 10 işlemler */
+.ops{position:absolute;left:120px;right:120px;top:290px;display:flex;gap:20px}
+.ops .pill b{color:var(--gold);font:700 34px var(--serif)}
+.ocard{position:absolute;top:400px;height:570px;padding:30px 36px}
+.eq{font:600 44px/1 var(--serif);font-variant-numeric:tabular-nums;white-space:nowrap;position:relative;display:table}
+.eq i{font-style:normal;color:var(--acc)}
+.dt{width:100%;margin-top:18px;border-collapse:collapse}
+.dt td{font:600 40px var(--serif);font-variant-numeric:tabular-nums;padding:6px 18px;border-bottom:1px solid var(--line);position:relative}
+.dt td:first-child{width:120px;color:var(--mute)}
+.dt td .ck{position:absolute;left:-26px;top:12px;color:var(--teal);font:700 30px var(--sans)}
+.banner{position:absolute;left:0;right:0;top:282px;text-align:center;font:600 50px var(--serif)}
+.banner b{color:var(--gold)}
+
+/* 11 kesirler */
+.mini{position:absolute;left:120px;top:290px;padding:18px 26px;width:760px}
+.mini .r{font:500 25px var(--sans);font-variant-numeric:tabular-nums;padding:8px 12px;border-radius:10px;white-space:nowrap}
+.mini .r.hl{background:rgba(255,107,61,.16);color:var(--ink);box-shadow:inset 4px 0 0 var(--acc)}
+.mini .lb{font:700 18px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.bigeq{position:absolute;left:0;right:0;top:470px;display:flex;justify-content:center;align-items:center;font:600 92px var(--serif);font-variant-numeric:tabular-nums}
+.bigeq .op{display:inline-block;overflow:hidden;text-align:center;color:var(--acc);width:100px}
+.bigeq .lhs{color:var(--gold)}
+.bm{position:absolute;left:0;top:0}
+.bm-lab{position:absolute;font:600 24px var(--sans);text-align:center;font-variant-numeric:tabular-nums}
+
+/* 12 geometri */
+.gq{position:absolute;width:820px;height:335px;padding:26px 34px;overflow:hidden}
+.gq svg{position:absolute;left:20px;top:20px;width:400px;height:295px}
+.gq .tx{position:absolute;left:430px;top:30px;right:30px}
+.gq .tt{font:600 40px/1.1 var(--serif)}
+.gq .ff{font:600 36px var(--serif);margin-top:20px;white-space:nowrap}
+.gq .ss{font:500 22px/1.4 var(--sans);color:#C9CDE0;margin-top:14px}
+
+/* 13 denklemler */
+.dcard{position:absolute;top:290px;width:820px;height:690px;padding:34px 40px}
+.dcard .src{font:700 19px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
+.dcard .pr{font:italic 400 38px/1.3 var(--serif);margin-top:18px}
+.dcard .st{font:600 40px var(--serif);margin-top:16px;white-space:nowrap}
+.strk{position:absolute;left:-10px;right:-10px;top:52%;height:5px;background:var(--rose);border-radius:3px;transform-origin:0 50%}
+
+/* 14 zayıflık */
+.recipe{position:absolute;left:120px;top:290px;width:860px;height:600px}
+.recipe svg{position:absolute;inset:0;width:860px;height:600px}
+.recipe .ln{position:absolute;left:110px;font:italic 500 38px var(--serif);color:#4A2E16;white-space:nowrap}
+.scale{position:absolute;left:1040px;top:290px;width:760px;height:600px}
+.scale svg{width:760px;height:600px}
+
+/* 15 kapanış */
+.cmp{position:absolute;top:340px;width:800px;height:600px;padding:36px 44px}
+.cmp .nm{font:600 64px var(--serif)}
+.cmp .sb{font:600 22px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+.cmp .rw{margin-top:34px}
+.cmp .rl{font:700 18px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+.cmp .li{font:500 27px var(--sans);margin-top:10px;color:#DADDEB}
+.cmp .li b{color:var(--gold);font-weight:650}
+.same{position:absolute;left:120px;width:1680px;top:288px;height:30px}
+.outro{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.outro .big{font:600 140px/1 var(--serif);margin-top:18px;letter-spacing:-.02em}
+.outro svg{width:900px;height:220px;margin-top:40px}
+.outro .bye{font:italic 400 64px var(--serif);color:var(--acc);margin-top:30px}
+
+/* önizleme kontrolleri */
+#ctrl{position:fixed;left:0;right:0;bottom:0;height:64px;display:flex;align-items:center;gap:16px;padding:0 20px;background:#0b0d18;border-top:1px solid #222;font:500 14px var(--sans);color:#aab}
+#ctrl button{background:#FF6B3D;color:#111;border:0;border-radius:8px;padding:8px 16px;font:700 14px var(--sans);cursor:pointer;min-width:84px}
+#ctrl input{flex:1;accent-color:#FF6B3D}
+#ctrl #tm{font-variant-numeric:tabular-nums;min-width:120px;text-align:right}
+</style>
+</head>
+<body>
+<div id="wrap"><div id="stage">
+  <div id="bg"><div class="blob" id="blob1"></div><div class="blob" id="blob2"></div><div id="grain"></div></div>
+  <div id="brand">Matematik Tarihi <b>·</b> Mısır Dönemi</div>
+  <div id="sceneNo"></div>
+  <div id="scenes"></div>
+  <div id="progress"></div>
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="pap" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFD9A6"/><stop offset="1" stop-color="#D6B676"/></linearGradient>
+      <linearGradient id="water" x1="0" x2="1"><stop offset="0" stop-color="#3B6FD8" stop-opacity=".85"/><stop offset="1" stop-color="#6FA8FF" stop-opacity=".7"/></linearGradient>
+      <radialGradient id="starGlow"><stop offset="0" stop-color="#FFF6D8" stop-opacity=".9"/><stop offset="1" stop-color="#FFC24B" stop-opacity="0"/></radialGradient>
+      <symbol id="sheep" viewBox="0 0 120 96">
+        <rect x="34" y="62" width="7" height="24" rx="3" fill="#2A2F45"/><rect x="48" y="64" width="7" height="22" rx="3" fill="#2A2F45"/>
+        <rect x="66" y="64" width="7" height="22" rx="3" fill="#2A2F45"/><rect x="78" y="62" width="7" height="24" rx="3" fill="#2A2F45"/>
+        <g fill="#F4EEE3"><circle cx="34" cy="46" r="17"/><circle cx="52" cy="36" r="19"/><circle cx="72" cy="38" r="18"/><circle cx="84" cy="52" r="15"/><circle cx="44" cy="60" r="15"/><circle cx="66" cy="60" r="16"/><circle cx="24" cy="56" r="12"/></g>
+        <ellipse cx="98" cy="40" rx="13" ry="16" fill="#2A2F45"/><ellipse cx="90" cy="30" rx="8" ry="4" transform="rotate(-25 90 30)" fill="#2A2F45"/>
+        <circle cx="102" cy="37" r="2.6" fill="#F4EEE3"/>
+      </symbol>
+    </defs>
+  </svg>
+</div></div>
+<div id="ctrl"><button id="play">Oynat</button><input id="scrub" type="range" min="0" step="0.01" value="0"><span id="tm"></span></div>
+
+<script src="../../animasyon/vendor/gsap.min.js"></script>
+<script src="../../animasyon/vendor/d3-array.min.js"></script>
+<script src="../../animasyon/vendor/d3-geo.min.js"></script>
+<script src="../../animasyon/vendor/topojson-client.min.js"></script>
+<script src="../../animasyon/vendor/world.js"></script>
+<script src="scenes.js"></script>
+<script>
+'use strict';
+const RENDER = new URLSearchParams(location.search).has('render');
+if (RENDER) document.body.classList.add('render');
+
+const LEAD = 1.0, TAIL = 1.0;
+const SC = window.SCENES;
+let T = 0; SC.forEach(s => { s.start = T; T += s.dur; });
+const TOTAL = T;
+const HOOKS = [], MISSING = [];
+
+/* ---------- yardımcılar ---------- */
+const $ = (q, r = document) => r.querySelector(q), $$ = (q, r = document) => [...r.querySelectorAll(q)];
+const NS = 'http://www.w3.org/2000/svg';
+function h(tag, attrs = {}, html) { const e = document.createElement(tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (html != null) e.innerHTML = html; return e; }
+function s(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function head(sec, eyebrow, title) { const d = h('div', { class: 'head' }, `<div class="eyebrow">${eyebrow}</div><div class="h1">${title}</div>`); sec.appendChild(d); return d; }
+function headIn(tl, d, at = 0.25) {
+  tl.from(d.children[0], { y: 20, opacity: 0, duration: .6, ease: 'power3.out' }, at)
+    .from(d.children[1], { y: 40, opacity: 0, duration: .8, ease: 'power3.out' }, at + .12);
+}
+function draw(el) { const L = el.getTotalLength(); el.style.strokeDasharray = L + ' ' + L; el.style.strokeDashoffset = L; return L; }
+function useEl(parent, id, x, y, w, hgt) { return s('use', { href: '#' + id, x, y, width: w, height: hgt }, parent); }
+function box(sec, cls, x, y, w, hgt, html = '') { const d = h('div', { class: cls }, html); Object.assign(d.style, { left: x + 'px', top: y + 'px', width: w + 'px', height: hgt + 'px' }); sec.appendChild(d); return d; }
+const fr = (n, d) => `<span class="fr"><span>${n}</span><span>${d}</span></span>`;
+function splitChars(el) {
+  const words = el.textContent.split(' ');
+  el.innerHTML = words.map(w => `<span style="display:inline-block;white-space:nowrap">${[...w].map(c => `<span class="ch">${c}</span>`).join('')}</span>`).join(' ');
+  return $$('.ch', el);
+}
+function txt(parent, x, y, str, style, attrs = {}) { const t = s('text', { x, y, style, ...attrs }, parent); t.textContent = str; return t; }
+/* Papirüs rulosu (SVG): yaprak + iki silindir + yazı izleri */
+function scrollSVG(parent, x, y, w, hgt, seed = 3, opts = {}) {
+  const g = s('g', {}, parent);
+  const sheet = s('g', {}, g);
+  s('rect', { x, y, width: w, height: hgt, fill: 'url(#pap)' }, sheet);
+  const R = rng(seed);
+  const nl = Math.max(2, Math.floor(hgt / 22));
+  for (let i = 1; i < nl; i++) s('line', { x1: x, y1: y + i * hgt / nl, x2: x + w, y2: y + i * hgt / nl, stroke: 'rgba(120,80,30,.12)', 'stroke-width': 1.5 }, sheet);
+  const marks = [];
+  if (opts.marks !== false) {
+    const rows = Math.max(1, Math.floor((hgt - 16) / 26)), gap = opts.gap || 46;
+    for (let r = 0; r < rows; r++) for (let cx = x + 22; cx < x + w - 16; cx += gap * (0.6 + R() * .7)) {
+      if (R() < .18) continue;
+      const cy = y + 14 + (r + .5) * (hgt - 28) / rows, k = R(), sz = Math.min(9, (hgt - 28) / rows * .35);
+      const d = k < .4 ? `M${cx} ${cy - sz} V${cy + sz}` : k < .7 ? `M${cx - sz * .8} ${cy + sz} V${cy} A${sz * .8} ${sz * .8} 0 0 1 ${cx + sz * .8} ${cy} V${cy + sz}` : `M${cx - sz} ${cy} H${cx + sz}`;
+      marks.push(s('path', { d, stroke: R() < .2 ? '#B0412A' : '#5A3A1E', 'stroke-width': Math.max(2, sz * .45), fill: 'none', 'stroke-linecap': 'round' }, sheet));
+    }
+  }
+  const rw = Math.min(36, Math.max(10, hgt * .32));
+  const rollL = s('rect', { x: x - rw * .7, y: y - rw * .4, width: rw, height: hgt + rw * .8, rx: rw / 2, fill: '#B8915A' }, g);
+  const rollR = s('rect', { x: x + w - rw * .3, y: y - rw * .4, width: rw, height: hgt + rw * .8, rx: rw / 2, fill: '#B8915A' }, g);
+  return { g, sheet, rollL, rollR, marks, rw };
+}
+/* Hiyeroglif rakamları (120×160 kutu) */
+function glyph(parent, type, x = 0, y = 0, k = 1, col = '#FFC24B', sw = 7) {
+  const g = s('g', { transform: `translate(${x} ${y}) scale(${k})` }, parent);
+  const P = d => s('path', { d, stroke: col, 'stroke-width': sw, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g);
+  const out = [];
+  if (type === 1) out.push(P('M60 30 V140'));
+  if (type === 10) out.push(P('M28 140 V78 A32 32 0 0 1 92 78 V140'));
+  if (type === 100) out.push(P('M60 140 V96 M60 96 m-30 0 a30 30 0 1 0 60 0 a22 22 0 1 0 -44 0 a14 14 0 1 0 28 0 a6 6 0 1 0 -12 0'), P('M60 140 C 60 60 70 40 92 28'));
+  if (type === 1000) out.push(P('M60 140 V62'), P('M60 62 C40 56 34 36 40 20 C50 30 56 44 60 62 C64 44 70 30 80 20 C86 36 80 56 60 62'), P('M60 140 C42 136 30 124 28 110 M60 140 C78 136 90 124 92 110'));
+  if (type === 10000) out.push(P('M48 142 V62 C48 34 58 22 72 26 C84 30 82 46 76 58 L70 142'), P('M56 48 C60 40 68 40 70 46'));
+  if (type === 100000) out.push(P('M60 72 m-24 0 a24 30 0 1 0 48 0 a24 30 0 1 0 -48 0'), P('M60 102 C42 118 78 128 60 146'), P('M52 64 h2 M68 64 h2'));
+  if (type === 1e6) out.push(P('M60 62 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0'), P('M60 74 V118 L36 142 H86'), P('M60 86 L34 70 L28 32 M60 86 L86 70 L92 32'));
+  return { g, paths: out };
+}
+/* Anlatım metnindeki bir ifadenin sahne içindeki zamanı (sn). Noktalama duraklamaları ağırlıklandırılır. */
+function mkCue(sc) {
+  const t = sc.text, w = [0]; let acc = 0;
+  for (let i = 0; i < t.length; i++) { const c = t[i]; acc += 1 + ('.!?'.includes(c) ? 9 : (',;:'.includes(c) ? 4 : 0)); w.push(acc); }
+  const speech = sc.speech ?? (sc.dur - LEAD - TAIL);
+  const at = i => LEAD + w[Math.max(0, Math.min(i, t.length))] / acc * speech;
+  const cue = (phrase, off = 0, nth = 1) => {
+    let i = -1; for (let k = 0; k < nth; k++) { i = t.indexOf(phrase, i + 1); if (i < 0) break; }
+    if (i < 0) { MISSING.push(sc.id + ': ' + phrase); i = 0; }
+    return at(i) + off;
+  };
+  cue.at = at; cue.idx = (phrase, from = 0) => t.indexOf(phrase, from);
+  cue.end = LEAD + speech;
+  return cue;
+}
+
+/* ---------- sahneler ---------- */
+const BUILD = {};
+
+BUILD.giris = (sec, cue, sc) => {
+  const tl = gsap.timeline();
+  const pyr = s('svg', { viewBox: '0 0 1920 1080', class: 'full' }); sec.appendChild(pyr);
+  const pst = { stroke: '#FFC24B', 'stroke-width': 3, fill: 'none', 'stroke-linejoin': 'round', opacity: .22 };
+  const pp = [s('path', { d: 'M420 930 L760 470 L1100 930', ...pst }, pyr), s('path', { d: 'M760 470 L840 930', ...pst }, pyr),
+    s('path', { d: 'M1000 930 L1260 560 L1520 930', ...pst }, pyr), s('path', { d: 'M1260 560 L1320 930', ...pst }, pyr),
+    s('path', { d: 'M120 930 H1800', ...pst, opacity: .15 }, pyr)];
+  const sun = s('circle', { cx: 1560, cy: 330, r: 70, fill: 'none', stroke: '#FF6B3D', 'stroke-width': 3, opacity: .3 }, pyr);
+  pp.forEach((p, i) => { draw(p); tl.to(p, { strokeDashoffset: 0, duration: 2, ease: 'power2.inOut' }, .2 + i * .2); });
+  tl.from(sun, { attr: { cy: 520 }, opacity: 0, duration: 3, ease: 'power2.out' }, .4);
+  const fl = h('div', { class: 'floaters' }); sec.appendChild(fl);
+  const syms = ['1', '10', '100', '½', '⅔', '2/29', '1/7', '19/6', 'π', '∩', '|||', '△', '□', '+', '√', '1650', '3500', '×2', '⅓', '¼', '85', '25', '=', '○'];
+  const R = rng(17);
+  syms.forEach(c => {
+    const sp = h('span', {}, c);
+    Object.assign(sp.style, { left: (R() * 1780 + 30) + 'px', top: (R() * 940 + 50) + 'px', fontSize: (36 + R() * 110) + 'px' });
+    fl.appendChild(sp);
+    tl.fromTo(sp, { opacity: 0, scale: .6 }, { opacity: .04 + R() * .1, scale: 1, duration: 2.2, ease: 'power2.out' }, R() * 1.6);
+    tl.fromTo(sp, { y: 0, rotation: 0 }, { y: -40 - R() * 80, rotation: (R() - .5) * 26, duration: sc.dur, ease: 'none' }, 0);
+  });
+  const c = h('div', { class: 'intro' }, `<div class="eyebrow">Bölüm 02</div><div class="mega">Mısır Dönemi</div><div class="intro-sub">Matematik Tarihi</div><div class="rule"></div>
+    <div class="chips"><div class="chip"><b>01</b>Nasıl saydılar?</div><div class="chip"><b>02</b>Nasıl hesapladılar?</div><div class="chip"><b>03</b>Hangi belgeler?</div></div>`);
+  sec.appendChild(c);
+  const chars = splitChars($('.mega', c));
+  tl.from($('.eyebrow', c), { opacity: 0, y: 20, duration: .7, ease: 'power3.out' }, .2)
+    .from(chars, { opacity: 0, y: 110, rotationX: -80, transformOrigin: '50% 100%', duration: 1.1, ease: 'power4.out', stagger: .05 }, .3)
+    .from($('.intro-sub', c), { opacity: 0, y: 40, duration: 1, ease: 'power3.out' }, 1.1)
+    .from($('.rule', c), { scaleX: 0, duration: .9, ease: 'power3.inOut' }, 1.5);
+  const chips = $$('.chip', c);
+  ['nasıl saydığını', 'nasıl hesap', 'hangi belgelerin'].forEach((p, i) =>
+    tl.from(chips[i], { opacity: 0, y: 30, scale: .9, duration: .7, ease: 'back.out(1.6)' }, cue(p, -.3)));
+  tl.fromTo(c, { scale: 1 }, { scale: 1.04, duration: sc.dur, ease: 'none' }, 0);
+  return tl;
+};
+
+BUILD.caglar = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Önce bir adım geri', 'Eski Çağlar'); headIn(tl, hd);
+  const segs = [
+    ['Eski Taş Çağı', 'Paleolitik · Yontma Taş', 'MÖ 600.000 – 10.000'],
+    ['Orta Taş Çağı', 'Mezolitik', 'MÖ 10.000 – 8.000'],
+    ['Yakın Taş Çağı', 'Neolitik · Cilalı Taş', 'MÖ 8.000 – 5.500'],
+    ['Maden Taş Çağı', 'Kalkolitik', 'MÖ 5.500 – 3.000'],
+    ['Tunç Çağı', '', 'MÖ 3.000 – 1.200'],
+    ['Demir Çağı', '', 'MÖ 1.200 – 750']];
+  const svg = s('svg', { viewBox: '0 0 1920 1080', class: 'full' }); sec.appendChild(svg);
+  const X0 = 120, SW = 280, Y = 395, H = 100;
+  // Taş Çağı parantezi
+  const br = s('path', { d: `M${X0 + 6} 375 V352 H${X0 + 4 * SW - 6} V375`, stroke: '#8F96B2', 'stroke-width': 3, fill: 'none' }, svg);
+  const brl = txt(svg, X0 + 2 * SW, 336, 'TAŞ ÇAĞI · MÖ 600.000 – 3.000', 'font:650 20px Inter Variable;letter-spacing:.24em;fill:#8F96B2', { 'text-anchor': 'middle' });
+  draw(br); tl.to(br, { strokeDashoffset: 0, duration: 1, ease: 'power2.inOut' }, 1.0).from(brl, { opacity: 0, duration: .6 }, 1.4);
+  const rects = segs.map(([t, sb, d], i) => {
+    const r = s('rect', { x: X0 + i * SW + 4, y: Y, width: SW - 8, height: H, rx: 16, fill: i < 4 ? '#1E2442' : '#262B45', stroke: 'rgba(255,255,255,.14)', 'stroke-width': 2 }, svg);
+    const lab = box(sec, 'seg-lab', X0 + i * SW, Y + (sb ? 18 : 32), SW, 60, `<div class="t">${t}</div>${sb ? `<div class="s">${sb}</div>` : ''}`);
+    const dt = box(sec, 'seg-date', X0 + i * SW, Y + H + 14, SW, 30, d);
+    tl.from(r, { scaleX: 0, svgOrigin: `${X0 + i * SW} 0`, duration: .6, ease: 'power3.out' }, .6 + i * .15)
+      .from([lab, dt], { opacity: 0, y: 10, duration: .5 }, .8 + i * .15);
+    return { r, lab, dt };
+  });
+  const tN = cue('neolitik dönemine', -.2);
+  tl.to(rects[2].r, { fill: '#FF6B3D', stroke: '#FFC24B', duration: .5 }, tN)
+    .to(rects[2].lab, { color: '#1a0f08', duration: .5 }, tN)
+    .to($('.s', rects[2].lab), { color: '#3a1d0c', duration: .5 }, tN)
+    .fromTo(rects[2].r, { scale: 1 }, { scale: 1.06, svgOrigin: `${X0 + 2.5 * SW} ${Y + H / 2}`, duration: .35, yoyo: true, repeat: 1, immediateRender: false }, tN)
+    .to(rects[2].dt, { color: '#FFC24B', duration: .5 }, tN);
+  // yaşam biçimi
+  const life = h('div', { class: 'life card' }, `<div class="ctitle">Yaşam biçimi</div><div class="row">
+    <div class="it"><svg viewBox="0 0 220 170" id="ic-tarim"></svg><div class="n">Tarım</div><div class="x"></div></div>
+    <div class="it"><svg viewBox="0 0 220 170" id="ic-hay"></svg><div class="n">Hayvancılık</div><div class="x"></div></div>
+    <div class="it"><svg viewBox="0 0 220 170" id="ic-ure"></svg><div class="n">Üretim</div><div class="x"></div></div></div>`);
+  sec.appendChild(life);
+  const wheat = $('#ic-tarim', life);
+  [70, 110, 150].forEach((x, k) => {
+    s('path', { d: `M${x} 160 C${x} 120 ${x - 4} 90 ${x + (k - 1) * 8} 40`, stroke: '#D9B45A', 'stroke-width': 5, fill: 'none', 'stroke-linecap': 'round' }, wheat);
+    for (let j = 0; j < 5; j++) { const yy = 46 + j * 14, xx = x + (k - 1) * 8 * (1 - j / 6); s('ellipse', { cx: xx - 9, cy: yy, rx: 9, ry: 5, transform: `rotate(-35 ${xx - 9} ${yy})`, fill: '#FFC24B' }, wheat); s('ellipse', { cx: xx + 9, cy: yy, rx: 9, ry: 5, transform: `rotate(35 ${xx + 9} ${yy})`, fill: '#FFC24B' }, wheat); }
+  });
+  const hay = $('#ic-hay', life); useEl(hay, 'sheep', 20, 30, 180, 144);
+  const ure = $('#ic-ure', life);
+  s('path', { d: 'M80 22 H140 M86 22 C86 46 50 56 50 100 C50 140 84 158 110 158 C136 158 170 140 170 100 C170 56 134 46 134 22', fill: '#C2552B', stroke: '#E07A4F', 'stroke-width': 4 }, ure);
+  s('path', { d: 'M58 92 H162 M54 112 H166', stroke: '#F4D2A8', 'stroke-width': 4, opacity: .7 }, ure);
+  const its = $$('.it', life), xs = $$('.x', life);
+  gsap.set(xs, { scaleX: 0 });
+  const tY = cue('tarım, hayvancılık', -.4), tS = cue('yerleşik hayata geçti', -.2);
+  tl.from(life, { opacity: 0, y: 40, duration: .8, ease: 'power3.out' }, cue('yerleşik hayat yoktu', -.6))
+    .fromTo(its, { filter: 'grayscale(1)', opacity: .35 }, { filter: 'grayscale(1)', opacity: .45, duration: .4 }, cue('yerleşik hayat yoktu', -.6));
+  ['tarım', 'hayvancılık', 'üretim de'].forEach((p, i) => tl.to(xs[i], { scaleX: 1, duration: .35, ease: 'power2.out' }, cue(p, -.1)));
+  tl.to(xs, { scaleX: 0, transformOrigin: '100% 50%', duration: .4, stagger: .1 }, tS)
+    .to(its[0], { filter: 'grayscale(0)', opacity: 1, duration: .6 }, cue('toprağı işlemeye', -.2))
+    .to(its[1], { filter: 'grayscale(0)', opacity: 1, duration: .6 }, cue('hayvan beslemeye', -.2))
+    .to(its[2], { filter: 'grayscale(0)', opacity: 1, duration: .6 }, cue('çanak çömlek', -.2))
+    .fromTo(its, { y: 0 }, { y: -10, duration: .3, yoyo: true, repeat: 1, stagger: .1, immediateRender: false }, cue('çanak çömlek', .8));
+  // ihtiyaç ölçeri
+  const need = h('div', { class: 'need card' }, `<div class="ctitle">Matematiğe ihtiyaç</div><svg viewBox="0 0 480 290"></svg>`); sec.appendChild(need);
+  const ns = $('svg', need);
+  s('line', { x1: 30, y1: 230, x2: 460, y2: 230, stroke: 'rgba(255,255,255,.2)', 'stroke-width': 2 }, ns);
+  const b1 = s('rect', { x: 70, y: 190, width: 130, height: 40, rx: 8, fill: '#555C7A' }, ns);
+  const b2 = s('rect', { x: 280, y: 40, width: 130, height: 190, rx: 8, fill: '#FF6B3D' }, ns);
+  const l1 = txt(ns, 135, 268, 'Öncesi', 'font:600 22px Inter Variable;fill:#8F96B2', { 'text-anchor': 'middle' });
+  const l2 = txt(ns, 345, 268, 'Neolitik ve sonrası', 'font:600 22px Inter Variable;fill:#F4EEE3', { 'text-anchor': 'middle' });
+  const up = txt(ns, 345, 28, '▲ bilim', 'font:700 22px Inter Variable;fill:#FFC24B;letter-spacing:.1em', { 'text-anchor': 'middle' });
+  const tB = cue('büyük bir fark', -.6);
+  tl.from(need, { opacity: 0, y: 40, duration: .8, ease: 'power3.out' }, tB - .8)
+    .from(b1, { scaleY: 0, transformOrigin: '50% 100%', duration: .6 }, tB)
+    .from(l1, { opacity: 0, duration: .4 }, tB)
+    .from(b2, { scaleY: 0, transformOrigin: '50% 100%', duration: 1.2, ease: 'power3.out' }, tB + .6)
+    .from(l2, { opacity: 0, duration: .4 }, tB + .6)
+    .from(up, { opacity: 0, y: 14, duration: .6, ease: 'back.out(2)' }, cue('bilime', -.2));
+  return tl;
+};
+
+BUILD.nil = (sec, cue) => {
+  const tl = gsap.timeline();
+  const svg = s('svg', { viewBox: '0 0 1920 1080', class: 'full' }); sec.appendChild(svg);
+  const proj = d3.geoMercator().center([37.5, 28.6]).scale(4300).translate([960, 600]);
+  const path = d3.geoPath(proj);
+  const g = s('g', {}, svg);
+  s('rect', { x: -4000, y: -4000, width: 10000, height: 10000, class: 'm-sphere' }, g);
+  const countries = topojson.feature(WORLD, WORLD.objects.countries);
+  s('path', { d: path(countries), class: 'm-land' }, g);
+  const egy = s('path', { d: path({ type: 'FeatureCollection', features: countries.features.filter(f => f.id === '818') }), class: 'm-egy' }, g);
+  const irq = s('path', { d: path({ type: 'FeatureCollection', features: countries.features.filter(f => f.id === '368') }), class: 'm-irq' }, g);
+  const line = pts => 'M' + pts.map(p => proj(p).map(v => v.toFixed(1)).join(' ')).join(' L');
+  const nile = [[32.90, 24.09], [32.95, 24.47], [32.87, 24.98], [32.55, 25.29], [32.64, 25.70], [32.72, 26.16], [32.25, 26.05], [31.89, 26.33], [31.69, 26.56], [31.18, 27.18], [30.75, 28.10], [31.10, 29.07], [31.23, 30.05]];
+  const nileP = s('path', { d: line(nile), class: 'm-river', 'stroke-width': 6 }, g);
+  const ros = s('path', { d: line([[31.23, 30.05], [30.9, 30.6], [30.6, 31.0], [30.37, 31.46]]), class: 'm-river', 'stroke-width': 4 }, g);
+  const dam = s('path', { d: line([[31.23, 30.05], [31.25, 30.6], [31.6, 31.1], [31.84, 31.52]]), class: 'm-river', 'stroke-width': 4 }, g);
+  const eup = s('path', { d: line([[38.4, 38.6], [38.2, 36.0], [40.4, 35.0], [41.0, 34.4], [43.3, 33.4], [44.8, 32.0], [46.0, 31.0], [47.6, 30.4]]), class: 'm-river', 'stroke-width': 4 }, g);
+  const tig = s('path', { d: line([[40.2, 37.9], [43.1, 36.3], [43.7, 34.6], [44.4, 33.3], [45.8, 32.5], [47.4, 31.0], [47.6, 30.4]]), class: 'm-river', 'stroke-width': 4 }, g);
+  [nileP, ros, dam, eup, tig].forEach(draw);
+  sec.appendChild(h('div', { class: 'map-shade' }));
+  const hd = head(sec, 'Coğrafya', 'Nil Nehri çevresinde bir uygarlık'); headIn(tl, hd);
+  const tNil = cue('Nil Nehri', -.3);
+  tl.from(egy, { opacity: 0, duration: 1.2 }, .8)
+    .to(nileP, { strokeDashoffset: 0, duration: 2.4, ease: 'power2.inOut' }, tNil)
+    .to([ros, dam], { strokeDashoffset: 0, duration: 1, ease: 'power2.out' }, tNil + 2.2);
+  const sites = [
+    { n: 'Sais', s: 'Nil deltası', ll: [30.77, 30.97], dir: 'l', at: cue('Sais', -.2) },
+    { n: 'Menfis', s: 'Aşağı Mısır', ll: [31.25, 29.85], dir: 'l', at: cue('Menfis', -.2) },
+    { n: 'Tinis', s: 'Yukarı Mısır', ll: [31.9, 26.33], dir: 'l', at: cue('Tinis', -.2) },
+    { n: 'Teb', s: 'Karnak · Luksor', ll: [32.64, 25.70], at: cue('Tinis', .7) }];
+  sites.forEach(st => {
+    st.el = h('div', { class: 'm-mark' }, `<div class="m-in"><div class="m-ring"></div><div class="m-dot"></div><div class="m-lab ${st.dir || ''}"><div class="t">${st.n}</div><div class="s">${st.s}</div></div></div>`);
+    st.el.style.setProperty('--c', '#FFC24B'); sec.appendChild(st.el);
+    tl.fromTo($('.m-in', st.el), { opacity: 0, scale: .4 }, { opacity: 1, scale: 1, duration: .6, ease: 'back.out(2)' }, st.at)
+      .fromTo($('.m-ring', st.el), { scale: 1, opacity: .9 }, { scale: 3, opacity: 0, duration: 1.6, repeat: 3, ease: 'power1.out' }, st.at);
+  });
+  const labels = [
+    { el: h('div', { class: 'm-region big' }, 'MISIR'), ll: [26.6, 25.0], at: tNil + 1 },
+    { el: h('div', { class: 'm-region sea' }, 'Akdeniz'), ll: [33.4, 33.1], at: 1.2 },
+    { el: h('div', { class: 'm-region sea' }, 'Kızıldeniz'), ll: [35.4, 25.4], at: 1.4 },
+    { el: h('div', { class: 'm-region riv' }, 'NİL'), ll: [31.4, 27.9], at: tNil + 1.2 },
+    { el: h('div', { class: 'm-region big' }, 'MEZOPOTAMYA'), ll: [40.2, 32.0], at: cue('nehir kenarlarına', -.2), c: 'rgba(56,214,196,.6)' },
+    { el: h('div', { class: 'm-region riv' }, 'FIRAT'), ll: [41.2, 33.6], at: cue('nehir kenarlarına', .4) },
+    { el: h('div', { class: 'm-region riv' }, 'DİCLE'), ll: [44.4, 34.5], at: cue('nehir kenarlarına', .6) },
+    { el: h('div', { class: 'm-region sea' }, 'Basra Körfezi'), ll: [48.4, 28.6], at: cue('deniz kıyılarına', -.2) }];
+  labels.forEach(l => { if (l.c) l.el.style.color = l.c; sec.appendChild(l.el); tl.fromTo(l.el, { opacity: 0 }, { opacity: 1, duration: .8 }, l.at); });
+  const tR = cue('nehir kenarlarına', -.6);
+  tl.from(irq, { opacity: 0, duration: 1 }, tR).to([eup, tig], { strokeDashoffset: 0, duration: 2, ease: 'power2.inOut' }, tR + .2);
+  // kamera
+  const cam = { x: 960, y: 600, k: 1 };
+  const W = (ll, k) => { const [x, y] = proj(ll); return { x, y, k }; };
+  gsap.set(cam, W([33.5, 28.4], 1.0));
+  tl.to(cam, { ...W([31.6, 29.0], 1.4), duration: 3, ease: 'power3.inOut' }, tNil - .4)
+    .to(cam, { ...W([38.6, 30.4], .92), duration: 2.8, ease: 'power3.inOut' }, cue('Daha önce de', -.4));
+  HOOKS.push(() => {
+    const ox = 960, oy = 600;
+    g.setAttribute('transform', `translate(${ox} ${oy}) scale(${cam.k}) translate(${-cam.x} ${-cam.y})`);
+    const place = (el, ll, sc = 1) => { const [x, y] = proj(ll); el.style.transform = `translate(${(x - cam.x) * cam.k + ox}px,${(y - cam.y) * cam.k + oy}px)`; };
+    sites.forEach(st => place(st.el, st.ll));
+    labels.forEach(l => place(l.el, l.ll));
+  });
+  return tl;
+};
+
+BUILD.donemler = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Kronoloji', 'Mısır matematiğinin dönemleri'); headIn(tl, hd);
+  const svg = s('svg', { viewBox: '0 0 1920 1080', class: 'full' }); sec.appendChild(svg);
+  const x0 = 160, W = 1600, k = W / 3170, X = y => x0 + (y + 3500) * k, BY = 480, BH = 64;
+  const P = [[-3500, -3100, 'Hanedan Öncesi'], [-3100, -2700, 'İlk Krallık'], [-2700, -2150, 'Eski Krallık'], [-2150, -2050, '1. Ara Dönem', 1],
+    [-2050, -1650, 'Orta Krallık'], [-1650, -1550, '2. Ara Dönem', 1], [-1550, -1050, 'Yeni Krallık'], [-1050, -650, '3. Ara Dönem', 1], [-650, -330, 'Geç Dönem']];
+  const cols = ['#2C3E73', '#35508F', '#3E62A8', null, '#4874C2', null, '#3E62A8', null, '#35508F'];
+  const pat = s('pattern', { id: 'hatch', width: 12, height: 12, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, s('defs', {}, svg));
+  s('rect', { width: 12, height: 12, fill: '#1A1F38' }, pat); s('line', { x1: 0, y1: 0, x2: 0, y2: 12, stroke: 'rgba(255,255,255,.18)', 'stroke-width': 4 }, pat);
+  const els = P.map(([a, b, n, ara], i) => {
+    const r = s('rect', { x: X(a) + 1.5, y: BY, width: X(b) - X(a) - 3, height: BH, rx: 6, fill: ara ? 'url(#hatch)' : cols[i] }, svg);
+    const cx = (X(a) + X(b)) / 2;
+    const lab = h('div', { class: 'pl' + (ara ? ' ara' : '') }, `<div class="t">${n}</div><div class="s">${-a} – ${-b}</div>`);
+    sec.appendChild(lab);
+    if (ara) { lab.style.left = cx + 'px'; lab.style.top = (BY + BH + 46 + (i === 5 ? 56 : 0)) + 'px'; s('line', { x1: cx, y1: BY + BH + 4, x2: cx, y2: BY + BH + 40 + (i === 5 ? 56 : 0), stroke: 'rgba(255,255,255,.25)', 'stroke-width': 2 }, svg); }
+    else { lab.style.left = cx + 'px'; lab.style.top = (BY - 74) + 'px'; }
+    gsap.set(lab, { xPercent: -50 });
+    tl.from(r, { scaleX: 0, svgOrigin: `${X(a)} 0`, duration: .45, ease: 'power2.out' }, .9 + i * .14)
+      .from(lab, { opacity: 0, y: 10, duration: .45 }, 1.0 + i * .14);
+    return { r, lab };
+  });
+  for (let y = -3500; y <= -500; y += 500) {
+    const t = h('div', { class: 'tick' }, 'MÖ ' + (-y).toLocaleString('tr-TR')); t.style.left = X(y) + 'px'; t.style.top = '700px'; sec.appendChild(t);
+    const l = s('line', { x1: X(y), y1: 688, x2: X(y), y2: 696, stroke: '#555C7A', 'stroke-width': 2 }, svg);
+    tl.from([t, l], { opacity: 0, duration: .4 }, 2.2);
+  }
+  const ax = s('line', { x1: x0, y1: 688, x2: x0 + W, y2: 688, stroke: '#555C7A', 'stroke-width': 2 }, svg);
+  tl.from(ax, { scaleX: 0, svgOrigin: `${x0} 0`, duration: 1 }, 2);
+  // MÖ 3500 iğnesi
+  const pin = s('g', {}, svg);
+  s('line', { x1: X(-3500), y1: BY - 90, x2: X(-3500), y2: BY + BH + 10, stroke: '#FFC24B', 'stroke-width': 4 }, pin);
+  s('circle', { cx: X(-3500), cy: BY - 96, r: 10, fill: '#FFC24B' }, pin);
+  const pinT = txt(pin, X(-3500) + 20, BY - 112, 'İlk bilgiler', 'font:700 22px Inter Variable;fill:#FFC24B;letter-spacing:.06em');
+  const t35 = cue('üç bin beş yüzlü', -.3);
+  tl.from(pin, { opacity: 0, y: -30, duration: .7, ease: 'back.out(2)' }, t35)
+    .to(els[0].lab, { opacity: 0, duration: .3 }, t35);
+  // Orta Krallık
+  const tO = cue('Orta Krallık', -.3);
+  els.forEach((e, i) => { if (i !== 4) tl.to([e.r, e.lab], { opacity: .28, duration: .6 }, tO); });
+  tl.to(pin, { opacity: .3, duration: .6 }, tO)
+    .to(els[4].r, { fill: '#FF6B3D', duration: .5 }, tO)
+    .fromTo(els[4].r, { scaleY: 1 }, { scaleY: 1.35, svgOrigin: `0 ${BY + BH / 2}`, duration: .5, ease: 'back.out(2)', immediateRender: false }, tO)
+    .to($('.t', els[4].lab), { color: '#FFC24B', duration: .4 }, tO);
+  const cx = (X(-2050) + X(-1650)) / 2;
+  const lead = s('path', { d: `M${cx} ${BY + BH + 16} V745`, stroke: '#FF6B3D', 'stroke-width': 3, fill: 'none', 'stroke-dasharray': '6 8' }, svg);
+  const co = h('div', { class: 'callout card' }, `<div class="ctitle">Orta Krallık · 11. ve 12. hanedan</div><div class="cbig">MÖ 2050 – 1650</div><div class="csub" style="max-width:440px">Elimizdeki bilgilerin büyük kısmı bu dönemde yazıldı.</div><svg viewBox="0 0 300 120" style="position:absolute;right:30px;top:56px;width:300px;height:120px"></svg>`);
+  sec.appendChild(co);
+  tl.from(lead, { opacity: 0, duration: .5 }, tO + .4).from(co, { opacity: 0, y: 30, duration: .8, ease: 'power3.out' }, tO + .6);
+  const ps = $('svg', co); const scrolls = [];
+  for (let i = 0; i < 4; i++) { const sc = scrollSVG(ps, 20 + i * 72, 18 + (i % 2) * 14, 44, 80, 10 + i, { gap: 14 }); scrolls.push(sc.g); }
+  tl.from(scrolls, { opacity: 0, y: 30, duration: .5, stagger: .15, ease: 'back.out(2)' }, cue('papirüslerin çoğu', -.4));
+  return tl;
+};
+
+BUILD.iliski = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Birbirine bağlı bilimler', 'Astronomi, matematik ve geometri'); headIn(tl, hd);
+  // sağ: üçgen
+  const tri = h('div', { class: 'tri card' }); sec.appendChild(tri);
+  const ts = s('svg', { viewBox: '0 0 540 640' }, tri);
+  const N = [{ n: 'Astronomi', x: 270, y: 150, c: '#6FA8FF' }, { n: 'Matematik', x: 120, y: 450, c: '#FFC24B' }, { n: 'Geometri', x: 420, y: 450, c: '#38D6C4' }];
+  const edges = [[0, 1], [1, 2], [2, 0]].map(([a, b]) => s('line', { x1: N[a].x, y1: N[a].y, x2: N[b].x, y2: N[b].y, stroke: 'rgba(255,255,255,.35)', 'stroke-width': 4, 'stroke-dasharray': '2 12', 'stroke-linecap': 'round' }, ts));
+  N.forEach(n => {
+    n.g = s('g', {}, ts);
+    n.glow = s('circle', { cx: n.x, cy: n.y, r: 100, fill: n.c, opacity: 0 }, n.g);
+    n.c0 = s('circle', { cx: n.x, cy: n.y, r: 82, fill: '#151A30', stroke: n.c, 'stroke-width': 4 }, n.g);
+    n.t = txt(n.g, n.x, n.y + 9, n.n, `font:600 27px Inter Variable;fill:#F4EEE3`, { 'text-anchor': 'middle' });
+  });
+  const cap = txt(ts, 270, 600, 'Aynı sorun, üç bilim', 'font:italic 400 32px Fraunces Variable;fill:#FFC24B', { 'text-anchor': 'middle' });
+  const t0 = cue('astronomi, matematik ve geometri', -.3);
+  tl.from(tri, { opacity: 0, x: 40, duration: .8, ease: 'power3.out' }, .6);
+  N.forEach((n, i) => tl.from(n.g, { scale: 0, svgOrigin: `${n.x} ${n.y}`, duration: .6, ease: 'back.out(2)' }, t0 + i * .4));
+  tl.from(edges, { opacity: 0, duration: .6, stagger: .2 }, cue('birlikte gelişti', -.3));
+  const lit = (n, at) => tl.to(n.glow, { opacity: .22, duration: .5 }, at).to(n.c0, { fill: n.c, duration: .5 }, at).to(n.t, { fill: '#10131f', duration: .5 }, at);
+  lit(N[2], cue('geometriye', -.2)); lit(N[1], cue('ve matematiğe', -.2)); lit(N[0], cue('astronomi de gelişti', -.3));
+  const tB = cue('birbirine bağlı', -.4);
+  tl.to(edges, { stroke: '#FFC24B', strokeDasharray: '400 0', duration: .8, stagger: .15 }, tB)
+    .from(cap, { opacity: 0, y: 14, duration: .6 }, tB + .6)
+    .fromTo(N.map(n => n.g), { scale: 1 }, { scale: 1.08, transformOrigin: '50% 50%', duration: .4, yoyo: true, repeat: 1, stagger: .12, immediateRender: false }, tB + .3);
+  // sol: tarla çizimi
+  const il = h('div', { class: 'illus' }); sec.appendChild(il);
+  const sv = s('svg', { viewBox: '0 0 1100 640' }, il);
+  s('rect', { x: 0, y: 0, width: 1100, height: 640, fill: '#141A33' }, sv);
+  const sky = s('g', {}, sv);
+  s('rect', { x: 0, y: 0, width: 1100, height: 170, fill: '#0A0E20' }, sky);
+  const R = rng(5);
+  for (let i = 0; i < 40; i++) s('circle', { cx: R() * 1100, cy: R() * 160, r: R() * 1.8 + .5, fill: '#F4EEE3', opacity: .3 + R() * .5 }, sky);
+  const arc = s('path', { d: 'M640 160 A220 130 0 0 1 1080 160', stroke: 'rgba(255,194,75,.4)', 'stroke-width': 2, 'stroke-dasharray': '4 8', fill: 'none' }, sky);
+  const starG = s('circle', { cx: 860, cy: 50, r: 60, fill: 'url(#starGlow)' }, sky);
+  const star = s('path', { d: 'M860 30 L866 44 L880 50 L866 56 L860 70 L854 56 L840 50 L854 44 Z', fill: '#FFF6D8' }, sky);
+  const skyT = txt(sky, 860, 112, 'Gökyüzünü izlemek → taşkının zamanı', 'font:600 21px Inter Variable;fill:#FFC24B;letter-spacing:.04em', { 'text-anchor': 'middle' });
+  // nil
+  s('rect', { x: 0, y: 170, width: 150, height: 470, fill: '#2C55B0' }, sv);
+  for (let i = 0; i < 7; i++) s('path', { d: `M${20 + (i % 3) * 40} ${200 + i * 62} q14 -8 28 0 t28 0`, stroke: 'rgba(255,255,255,.3)', 'stroke-width': 2, fill: 'none' }, sv);
+  txt(sv, 75, 420, 'NİL', 'font:700 26px Inter Variable;fill:rgba(255,255,255,.6);letter-spacing:.2em', { 'text-anchor': 'middle' });
+  // parseller
+  const cols = ['#3E7D45', '#7C8B3A', '#4F8A4A', '#A08A3C', '#5D7F3A', '#3F6E4E', '#8D9442', '#4C7A3E', '#6E8C3B', '#A3923F', '#4A8150', '#7A7F37'];
+  const px = [170, 400, 630, 860, 1090], py = [190, 340, 490, 630];
+  const parcels = [];
+  for (let r = 0; r < 3; r++) for (let c = 0; c < 4; c++) parcels.push(s('rect', { x: px[c] + 4, y: py[r] + 4, width: px[c + 1] - px[c] - 8, height: py[r + 1] - py[r] - 8, fill: cols[r * 4 + c], opacity: .8 }, sv));
+  const bnd = s('g', {}, sv);
+  [400, 630, 860].forEach(x => s('line', { x1: x, y1: 190, x2: x, y2: 630, stroke: '#F4EEE3', 'stroke-width': 3, 'stroke-dasharray': '10 8' }, bnd));
+  [340, 490].forEach(y => s('line', { x1: 170, y1: y, x2: 1090, y2: y, stroke: '#F4EEE3', 'stroke-width': 3, 'stroke-dasharray': '10 8' }, bnd));
+  [400, 630, 860].forEach(x => [340, 490].forEach(y => s('rect', { x: x - 7, y: y - 7, width: 14, height: 14, fill: '#D9C9A8' }, bnd)));
+  const water = s('rect', { x: 150, y: 170, width: 950, height: 470, fill: 'url(#water)' }, sv);
+  const nbnd = s('g', {}, sv); const nl = [];
+  [[400, 190, 400, 630], [630, 190, 630, 630], [860, 190, 860, 630], [170, 340, 1090, 340], [170, 490, 1090, 490]].forEach(([a, b, c, d]) => nl.push(s('line', { x1: a, y1: b, x2: c, y2: d, stroke: '#FFC24B', 'stroke-width': 4 }, nbnd)));
+  const meas = s('g', {}, sv);
+  const m1 = s('path', { d: 'M404 520 H626', stroke: '#FFC24B', 'stroke-width': 3, fill: 'none', 'marker-start': '', }, meas);
+  const m2 = s('path', { d: 'M600 494 V626', stroke: '#FFC24B', 'stroke-width': 3, fill: 'none' }, meas);
+  const mq = txt(meas, 515, 575, 'Alan = ?', 'font:600 34px Fraunces Variable;fill:#FFC24B', { 'text-anchor': 'middle' });
+  const lab = txt(sv, 1080, 222, '', 'font:700 22px Inter Variable;fill:#F4EEE3;letter-spacing:.18em', { 'text-anchor': 'end' });
+  tl.from(il, { opacity: 0, y: 40, duration: .9, ease: 'power3.out' }, .5);
+  const tF = cue('Nil Nehri taştığında', -.2);
+  tl.fromTo(water, { attr: { width: 0 } }, { attr: { width: 950 }, duration: 2.4, ease: 'power2.inOut' }, tF)
+    .to(bnd, { opacity: 0, duration: 1.2 }, tF + 1.4)
+    .fromTo(lab, { opacity: 0 }, { opacity: 1, duration: .4 }, tF + 1.2)
+    .call(() => {}, null, tF);
+  lab.textContent = 'TAŞKIN: SINIRLAR KAYBOLDU';
+  const tM = cue('Bu alanları yeniden', -.3);
+  tl.to(water, { attr: { width: 0 }, duration: 1.8, ease: 'power2.inOut' }, tM)
+    .to(lab, { opacity: 0, duration: .4 }, tM);
+  nl.forEach(draw);
+  tl.to(nl, { strokeDashoffset: 0, duration: .7, stagger: .2, ease: 'power2.out' }, tM + 1.4)
+    .from([m1, m2], { opacity: 0, duration: .4 }, tM + 2.6)
+    .from(mq, { opacity: 0, scale: .6, svgOrigin: '515 565', duration: .5, ease: 'back.out(2)' }, tM + 2.8);
+  const tA = cue('bir astronomi olayıydı', -.4);
+  draw(arc);
+  tl.to(arc, { strokeDashoffset: 0, duration: 1.4 }, tA)
+    .from([star, starG], { opacity: 0, scale: .3, svgOrigin: '860 50', duration: .8, ease: 'back.out(2)' }, tA + .4)
+    .from(skyT, { opacity: 0, y: 10, duration: .6 }, cue('ne zaman taşacağını', -.2))
+    .to(starG, { attr: { r: 80 }, duration: 1, yoyo: true, repeat: 3, ease: 'sine.inOut' }, tA + 1.2);
+  return tl;
+};
+
+BUILD.papirus = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Kaynaklarımız', 'Papirüsler'); headIn(tl, hd);
+  const A = h('div', { class: 'full' }); sec.appendChild(A);
+  const sv = s('svg', { viewBox: '0 0 1920 1080', class: 'full' }, A);
+  // bitki
+  const R = rng(9); const stalks = [], tops = [];
+  for (let i = 0; i < 7; i++) {
+    const bx = 200 + i * 34, tx = 160 + i * 52 + (R() - .5) * 30, ty = 360 + R() * 90;
+    const st = s('path', { d: `M${bx} 900 C${bx} 700 ${tx} 560 ${tx} ${ty}`, stroke: '#2FB57F', 'stroke-width': 7, fill: 'none', 'stroke-linecap': 'round' }, sv);
+    draw(st); stalks.push(st);
+    const tg = s('g', {}, sv);
+    for (let k = 0; k < 9; k++) { const a = -Math.PI / 2 + (k - 4) * .26; s('line', { x1: tx, y1: ty, x2: tx + Math.cos(a) * 56, y2: ty + Math.sin(a) * 56, stroke: '#7FD6A6', 'stroke-width': 3, 'stroke-linecap': 'round' }, tg); }
+    tops.push({ tg, tx, ty });
+  }
+  s('path', { d: 'M150 900 Q300 880 470 900', stroke: '#2C55B0', 'stroke-width': 10, fill: 'none', 'stroke-linecap': 'round', opacity: .8 }, sv);
+  const tP = cue('papirüs bitkisinin', -.4);
+  tl.to(stalks, { strokeDashoffset: 0, duration: 1.4, stagger: .1, ease: 'power2.out' }, tP);
+  tops.forEach((t, i) => tl.from(t.tg, { scale: 0, svgOrigin: `${t.tx} ${t.ty}`, duration: .6, ease: 'back.out(2)' }, tP + 1 + i * .1));
+  // yaprak örgüsü
+  const sx = 600, sy = 470, sw = 320, sh = 340;
+  const strips = [];
+  for (let i = 0; i < 8; i++) strips.push(s('rect', { x: sx, y: sy + i * sh / 8, width: sw, height: sh / 8 - 3, fill: '#E6CF98', opacity: .95 }, sv));
+  const vstr = [];
+  for (let i = 0; i < 8; i++) vstr.push(s('rect', { x: sx + i * sw / 8, y: sy, width: sw / 8 - 3, height: sh, fill: '#D9BD7E', opacity: .55 }, sv));
+  const arr = s('path', { d: 'M490 640 H570 M552 626 L570 640 L552 654', stroke: '#FF6B3D', 'stroke-width': 5, fill: 'none', 'stroke-linecap': 'round' }, sv);
+  const sLab = txt(sv, sx + sw / 2, sy - 22, 'İNCE BİR KÂĞIT', 'font:700 22px Inter Variable;fill:#FFC24B;letter-spacing:.2em', { 'text-anchor': 'middle' });
+  const tS = cue('saplarından yapılan', -.2);
+  tl.from(arr, { opacity: 0, x: -20, duration: .5 }, tS)
+    .from(strips, { scaleX: 0, svgOrigin: `${sx} 0`, duration: .4, stagger: .08 }, tS + .3)
+    .from(vstr, { scaleY: 0, svgOrigin: `0 ${sy}`, duration: .4, stagger: .08 }, tS + 1)
+    .from(sLab, { opacity: 0, y: 10, duration: .5 }, cue('ince bir kâğıt', -.2));
+  const f1 = h('div', { class: 'flag' }, '⏳ Kısa ömürlü'), f2 = h('div', { class: 'flag' }, '⚠ Saklanması zor');
+  Object.assign(f1.style, { left: '560px', top: '850px' }); Object.assign(f2.style, { left: '560px', top: '930px' }); A.append(f1, f2);
+  tl.from(f1, { opacity: 0, x: -30, duration: .6, ease: 'power3.out' }, cue('ömrü uzun', -.3))
+    .from(f2, { opacity: 0, x: -30, duration: .6, ease: 'power3.out' }, cue('saklanması', -.3))
+    .to(strips.concat(vstr), { opacity: .5, duration: 1.5 }, cue('ömrü uzun', .3));
+  // asıl → kopya
+  const orig = s('g', {}, sv);
+  s('rect', { x: 1080, y: 470, width: 260, height: 300, fill: 'none', stroke: '#8F96B2', 'stroke-width': 3, 'stroke-dasharray': '10 10', rx: 4 }, orig);
+  txt(orig, 1210, 630, '?', 'font:600 90px Fraunces Variable;fill:#555C7A', { 'text-anchor': 'middle' });
+  const oL = box(A, 'plab', 1060, 790, 300, 80, '<b>Özgün metin</b>kayıp');
+  const cp = scrollSVG(sv, 1500, 470, 260, 300, 21);
+  const cL = box(A, 'plab', 1480, 790, 300, 80, '<b>Kopya</b>bize ulaşan');
+  const ca = s('path', { d: 'M1360 620 H1470 M1450 604 L1470 620 L1450 636', stroke: '#FF6B3D', 'stroke-width': 5, fill: 'none', 'stroke-linecap': 'round' }, sv);
+  const tO = cue('özgün metnin', -.4), tC = cue('kopyalarıdır', -.6);
+  tl.from(orig, { opacity: 0, duration: .7 }, tO).from(oL, { opacity: 0, y: 10, duration: .5 }, tO + .2)
+    .from(ca, { opacity: 0, x: -30, duration: .5 }, tC)
+    .from(cp.g, { opacity: 0, scale: .8, svgOrigin: '1630 620', duration: .7, ease: 'back.out(1.6)' }, tC + .3)
+    .from(cL, { opacity: 0, y: 10, duration: .5 }, tC + .5);
+  // iki papirüs
+  const tI = cue('İçinde yoğun', -.4);
+  tl.to(A, { opacity: 0, y: -20, duration: .6 }, tI);
+  const B = h('div', { class: 'full' }); sec.appendChild(B);
+  const bs = s('svg', { viewBox: '0 0 1920 1080', class: 'full' }, B);
+  const r1 = scrollSVG(bs, 300, 400, 560, 300, 31), r2 = scrollSVG(bs, 1080, 400, 560, 300, 37);
+  const l1 = box(B, 'plab', 280, 740, 600, 100, '<b>Rhind (Ahmes) Papirüsü</b>Londra · British Museum');
+  const l2 = box(B, 'plab', 1060, 740, 600, 100, '<b>Moskova Papirüsü</b>Moskova · Puşkin Müzesi');
+  const eq = s('text', { x: 960, y: 580, 'text-anchor': 'middle', style: 'font:600 110px Fraunces Variable;fill:#FFC24B' }, bs); eq.textContent = '≈';
+  const ring = s('rect', { x: 270, y: 370, width: 620, height: 360, rx: 20, fill: 'none', stroke: '#FFC24B', 'stroke-width': 4 }, bs);
+  const fin = h('div', { class: 'cap' }, 'Bildiklerimizin <b>neredeyse tamamı</b> Rhind Papirüsü’nden'); fin.style.top = '900px'; B.appendChild(fin);
+  [r1, r2].forEach((r, i) => {
+    const t = i ? cue('Moskova Papirüsü', -.3) : cue('Rind, yani Ahmes', -.3);
+    tl.from(r.sheet, { scaleX: 0, svgOrigin: `${i ? 1360 : 580} 0`, duration: 1.1, ease: 'power3.inOut' }, t)
+      .fromTo(r.rollL, { x: 280 }, { x: 0, duration: 1.1, ease: 'power3.inOut' }, t)
+      .fromTo(r.rollR, { x: -280 }, { x: 0, duration: 1.1, ease: 'power3.inOut' }, t)
+      .from([r.rollL, r.rollR], { opacity: 0, duration: .3 }, t)
+      .from(i ? l2 : l1, { opacity: 0, y: 14, duration: .6 }, t + .6);
+  });
+  const tB = cue('birbirine çok benzer', -.4), tN = cue('neredeyse tamamını', -.6);
+  tl.from(eq, { opacity: 0, scale: .4, svgOrigin: '960 550', duration: .6, ease: 'back.out(2)' }, tB)
+    .to([r2.g, l2], { opacity: .35, duration: .6 }, tN)
+    .to(eq, { opacity: .35, duration: .6 }, tN)
+    .from(ring, { opacity: 0, scale: .95, svgOrigin: '580 550', duration: .6 }, tN)
+    .from(fin, { opacity: 0, y: 20, duration: .7 }, tN + .4);
+  return tl;
+};
+
+BUILD.rhind = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Matematikte ilk yazılı kaynaklar', 'Rhind (Ahmes) Papirüsü'); headIn(tl, hd);
+  const svg = s('svg', { viewBox: '0 0 1920 1080', class: 'full' }); sec.appendChild(svg);
+  // 5 m × 30 cm ölçekli rulo
+  const RX = 160, RY = 300, RW = 1600, RH = 96;
+  const r = scrollSVG(svg, RX, RY, RW, RH, 44, { gap: 30 });
+  const dimL = s('g', {}, svg);
+  s('path', { d: `M${RX} ${RY + RH + 26} H${RX + RW} M${RX} ${RY + RH + 16} V${RY + RH + 36} M${RX + RW} ${RY + RH + 16} V${RY + RH + 36}`, stroke: '#8F96B2', 'stroke-width': 2 }, dimL);
+  const dimT = txt(dimL, RX + RW * .72, RY + RH + 62, '≈ 5 m', 'font:700 26px Inter Variable;fill:#F4EEE3', { 'text-anchor': 'middle' });
+  const dimV = s('g', {}, svg);
+  s('path', { d: `M${RX - 44} ${RY} V${RY + RH} M${RX - 54} ${RY} H${RX - 34} M${RX - 54} ${RY + RH} H${RX - 34}`, stroke: '#8F96B2', 'stroke-width': 2 }, dimV);
+  txt(dimV, RX - 60, RY + RH / 2 + 8, '30 cm', 'font:700 22px Inter Variable;fill:#F4EEE3', { 'text-anchor': 'end' });
+  gsap.set(r.sheet, { scaleX: 0, svgOrigin: `${RX} 0` });
+  gsap.set(r.rollR, { x: -RW });
+  tl.from([r.rollL, r.rollR], { opacity: 0, duration: .6 }, .8);
+  const tD = cue('Otuz santimetre', -.3);
+  tl.to(r.sheet, { scaleX: 1, duration: 2.6, ease: 'power2.inOut' }, tD)
+    .to(r.rollR, { x: 0, duration: 2.6, ease: 'power2.inOut' }, tD)
+    .from(dimV, { opacity: 0, duration: .5 }, tD + .2)
+    .from(dimL, { opacity: 0, duration: .6 }, cue('beş metre', -.2));
+  // zaman çizgisi
+  const TY = 600, xs = [260, 610, 960, 1310, 1660];
+  const stops = [['MÖ 3500', 'Bilgilerin uzandığı tarih', 'üç bin beş yüze'], ['MÖ ~1850', 'Orta Krallık’taki<br>asıl belge', 'iki yüz yıl'], ['MÖ 1650', 'Papirüs yazıldı', 'bin altı yüz elli yılında yazıldığı'],
+    ['1858', 'A. Henry Rhind buldu', 'bin sekiz yüz elli sekiz'], ['Bugün', 'British Museum, Londra', 'British Museum']];
+  const base = s('line', { x1: 200, y1: TY, x2: 1720, y2: TY, stroke: 'rgba(255,255,255,.18)', 'stroke-width': 4, 'stroke-linecap': 'round' }, svg);
+  [785, 1135].forEach(x => s('path', { d: `M${x - 10} ${TY + 12} l10 -24 M${x + 2} ${TY + 12} l10 -24`, stroke: '#555C7A', 'stroke-width': 3 }, svg));
+  tl.from(base, { scaleX: 0, svgOrigin: '200 0', duration: 1 }, .9);
+  stops.forEach(([y, d, c], i) => {
+    const dot = s('circle', { cx: xs[i], cy: TY, r: 13, fill: '#151A30', stroke: '#8F96B2', 'stroke-width': 3 }, svg);
+    const el = h('div', { class: 'stop' }, `<div class="y">${y}</div><div class="d">${d}</div>`);
+    el.style.left = (xs[i] - 150) + 'px'; el.style.top = (TY - 82) + 'px'; sec.appendChild(el);
+    gsap.set($('.d', el), { position: 'absolute', left: 0, right: 0, top: 108 });
+    const t = cue(c, -.3);
+    tl.to(dot, { fill: '#FF6B3D', stroke: '#FFC24B', duration: .3 }, t)
+      .fromTo(dot, { attr: { r: 13 } }, { attr: { r: 19 }, duration: .25, yoyo: true, repeat: 1, immediateRender: false }, t)
+      .from(el, { opacity: 0, y: 16, duration: .6, ease: 'power3.out' }, t);
+  });
+  const cp = s('path', { d: `M${xs[1] + 20} ${TY - 95} Q${(xs[1] + xs[2]) / 2} ${TY - 175} ${xs[2] - 20} ${TY - 95}`, stroke: '#FFC24B', 'stroke-width': 3, fill: 'none', 'stroke-dasharray': '8 8' }, svg);
+  const cpt = txt(svg, (xs[1] + xs[2]) / 2, TY - 145, 'kopyalandı', 'font:italic 400 26px Fraunces Variable;fill:#FFC24B', { 'text-anchor': 'middle' });
+  const tK = cue('kopyalanmıştır', -.4);
+  tl.from(cp, { opacity: 0, duration: .5 }, tK).from(cpt, { opacity: 0, y: 8, duration: .5 }, tK + .2);
+  const sp = s('path', { d: `M${xs[0]} ${TY + 70} Q${(xs[0] + xs[2]) / 2} ${TY + 150} ${xs[2]} ${TY + 70}`, stroke: '#38D6C4', 'stroke-width': 3, fill: 'none' }, svg);
+  draw(sp);
+  const tB = cue('Burada dikkat', -.2);
+  tl.to(sp, { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut' }, cue('üç bin beş yüze', .4));
+  // kartlar
+  const c1 = h('div', { class: 'fcard card' }, `<div class="ctitle">Konular</div><div class="chiprow"><span>Cebir</span><span>Geometri</span><span>Trigonometri</span><span>Bölme</span></div><div class="csub" style="margin-top:14px">Antik Mısır matematiğinin temeli</div>`);
+  c1.style.left = '120px'; c1.style.width = '1000px'; sec.appendChild(c1);
+  const c2 = h('div', { class: 'fcard card' }, `<div class="ctitle">İçerik</div><div style="display:flex;align-items:baseline;gap:22px;margin-top:6px"><div class="cbig" style="font-size:84px;color:#FFC24B" id="n85">0</div><div class="csub" style="margin:0">problem<br>ve tablolar</div></div>`);
+  c2.style.left = '1160px'; c2.style.width = '640px'; sec.appendChild(c2);
+  const tc = cue('cebir', -.6);
+  tl.from(c1, { opacity: 0, y: 30, duration: .7 }, tc - .4)
+    .from($$('.chiprow span', c1), { opacity: 0, y: 14, scale: .8, duration: .45, stagger: .35, ease: 'back.out(2)' }, tc)
+    .from($('.csub', c1), { opacity: 0, duration: .5 }, cue('temelini', -.4));
+  const n85 = $('#n85', c2), cnt = { v: 0 };
+  const t85 = cue('Tablolardan', -.3);
+  tl.from(c2, { opacity: 0, y: 30, duration: .7 }, t85).to(cnt, { v: 85, duration: 1.4, ease: 'power2.out' }, cue('seksen beş', -.3));
+  HOOKS.push(() => { n85.textContent = Math.round(cnt.v); });
+  return tl;
+};
+
+BUILD.moskova = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Tablolar ve ikinci papirüs', 'Birim kesirler · Moskova Papirüsü'); headIn(tl, hd);
+  gsap.set(hd, { scale: .8, transformOrigin: '0 0' });
+  const T = { 3: [2, 6], 5: [3, 15], 7: [4, 28], 9: [6, 18], 11: [6, 66], 13: [8, 52, 104], 15: [10, 30], 17: [12, 51, 68], 19: [12, 76, 114], 21: [14, 42], 23: [12, 276], 25: [15, 75],
+    27: [18, 54], 29: [24, 58, 174, 232], 31: [20, 124, 155], 33: [22, 66], 35: [30, 42], 37: [24, 111, 296], 39: [26, 78], 41: [24, 246, 328], 43: [42, 86, 129, 301], 45: [30, 90], 47: [30, 141, 470], 49: [28, 196]};
+  const A = h('div', { class: 'full' }); sec.appendChild(A);
+  const tab = h('div', { class: 'utab card' }, `<div class="ctitle">Rhind Papirüsü · 2/n tablosu</div><div class="grid"></div>`); A.appendChild(tab);
+  const keys = Object.keys(T).map(Number);
+  const order = []; for (let c = 0; c < 3; c++) for (let r = 0; r < 8; r++) order.push(keys[c * 8 + r]);
+  const grid = $('.grid', tab);
+  const cells = [];
+  for (let r = 0; r < 8; r++) for (let c = 0; c < 3; c++) {
+    const n = keys[c * 8 + r];
+    const e = h('div', { class: 'e' }, `<span class="two">2</span>/${n} = ${T[n].map(d => `<span class="u">1/${d}</span>`).join(' + ')}`);
+    grid.appendChild(e); cells.push(e);
+  }
+  const tT = cue('birim kesirler tablosu', -1.2);
+  tl.from(tab, { opacity: 0, y: 40, duration: .8, ease: 'power3.out' }, Math.max(.6, tT - .6))
+    .from(cells, { opacity: 0, y: 12, duration: .35, stagger: .05 }, tT);
+  const ex = h('div', { class: 'uexp card' }, `<div class="ctitle">Ne gösteriyor?</div><div class="big"><span style="color:#FF6B3D">2</span>/<i style="font-style:italic">n</i></div><div class="arrow">↓</div>
+    <div class="big" style="font-size:58px">1/a + 1/b + …</div><div class="csub" style="text-align:center;margin-top:30px">payı 2 olan kesir,<br><b style="color:#38D6C4">birim kesirlerin</b> toplamı olarak</div>`);
+  A.appendChild(ex);
+  const t2 = cue('payı iki', -.4);
+  tl.from(ex, { opacity: 0, x: 40, duration: .8, ease: 'power3.out' }, t2 - .3)
+    .to($$('.two', tab), { scale: 1.3, duration: .3, yoyo: true, repeat: 1 }, t2 + .3)
+    .to($$('.u', tab), { color: '#38D6C4', duration: .6 }, cue('birim kesirler cinsinden', -.2));
+  // Moskova
+  const tM = cue('Gelelim Moskova', -.3);
+  tl.to(A, { opacity: 0, y: -20, duration: .6 }, tM);
+  const B = h('div', { class: 'full' }); sec.appendChild(B);
+  const bs = s('svg', { viewBox: '0 0 1920 1080', class: 'full' }, B);
+  const k = 3; // px/cm
+  const rh = scrollSVG(bs, 180, 360, 500 * k, 30 * k, 51, { gap: 34 });
+  const mo = scrollSVG(bs, 180, 560, 550 * k, 10 * k, 57, { gap: 26 });
+  const lr = box(B, 'abs', 180, 310, 1400, 40, `<span style="font:600 30px var(--serif)">Rhind</span> <span style="font:500 21px var(--sans);color:var(--mute);margin-left:14px">MÖ 1650 · 30 cm × 5 m</span>`);
+  const lm = box(B, 'abs', 180, 510, 1400, 40, `<span style="font:600 30px var(--serif);color:#FFC24B">Moskova</span> <span class="md" style="font:500 21px var(--sans);color:var(--mute);margin-left:14px">MÖ 1890</span><span class="mz" style="font:500 21px var(--sans);color:var(--mute)"> · 10 cm × 5,5 m</span>`);
+  const scl = box(B, 'abs', 1500, 640, 300, 30, `<span style="font:600 18px var(--sans);letter-spacing:.2em;color:var(--dim)">AYNI ÖLÇEK</span>`);
+  scl.style.textAlign = 'right';
+  tl.from([rh.g, lr], { opacity: 0, duration: .6 }, tM + .5)
+    .to([rh.g, lr], { opacity: .45, duration: .6 }, tM + 1.4)
+    .from(mo.sheet, { scaleX: 0, svgOrigin: '180 0', duration: 1.6, ease: 'power3.inOut' }, tM + .9)
+    .from([mo.rollL, mo.rollR, lm], { opacity: 0, duration: .5 }, tM + .9)
+    .from($('.md', lm), { opacity: 0, duration: .5 }, cue('bin sekiz yüz doksan', -.3))
+    .from($('.mz', lm), { opacity: 0, duration: .5 }, cue('on santimetre', -.3))
+    .from(scl, { opacity: 0, duration: .5 }, cue('on santimetre', .2))
+    .to([rh.g, lr], { opacity: 1, duration: .6 }, cue('on santimetre', .2));
+  // istatistik kartları
+  const s1 = box(B, 'stat card', 120, 720, 520, 250, `<div class="ctitle">Birim kesir listesi</div><div style="display:flex;gap:40px;margin-top:30px;font:600 34px var(--serif)"><div>Rhind <span style="color:#38D6C4">✓</span></div><div>Moskova <span style="color:#38D6C4">✓</span></div></div>`);
+  const s2 = box(B, 'stat card', 680, 720, 560, 250, `<div class="ctitle">Problem sayısı</div>
+    <div style="display:flex;align-items:center;gap:16px;margin-top:26px"><div style="width:120px;font:600 26px var(--sans)">Rhind</div><div class="bar" style="width:${85 * 3.6}px;background:#3E62A8"></div><div style="font:600 30px var(--serif)">85</div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-top:18px"><div style="width:120px;font:600 26px var(--sans);color:#FFC24B">Moskova</div><div class="bar" style="width:${25 * 3.6}px;background:#FFC24B"></div><div style="font:600 30px var(--serif)">25</div></div>`);
+  const s3 = box(B, 'stat card', 1280, 720, 520, 250, `<div class="ctitle">Benzerlik</div><div class="cbig" style="font-size:38px;margin-top:16px">2 özellikli problem</div><div class="csub">ör. kesik piramidin hacmi.<br>Gerisi Rhind’dekilere çok benzer.</div>`);
+  tl.from(s1, { opacity: 0, y: 30, duration: .6 }, cue('birim kesirlerin listesini', -.3))
+    .from(s2, { opacity: 0, y: 30, duration: .6 }, cue('yirmi beş problem', -.6))
+    .from($$('.bar', s2), { scaleX: 0, duration: .9, stagger: .3, ease: 'power3.out' }, cue('yirmi beş problem', -.2))
+    .from(s3, { opacity: 0, y: 30, duration: .6 }, cue('Özellikli', -.3));
+  return tl;
+};
+
+BUILD.sayilar = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Hiyeroglif rakamlar', 'Sayılar'); headIn(tl, hd);
+  const G = [[1, '1', 'düz çizgi', 'Biri düz'], [10, '10', 'nal<br>(öküz bağı)', 'onu nal'], [100, '100', 'kıvrık ip', 'yüzü kıvrık'], [1000, '1.000', 'nilüfer', 'Bin için'],
+    [10000, '10.000', 'parmak', 'on bin için'], [100000, '100.000', 'iribaş<br>(kurbağa)', 'yüz bin için'], [1e6, '1.000.000', 'dua eden adam', 'bir milyon için']];
+  const tag = h('div', { class: 'tag g abs' }, 'Onluk sistem'); Object.assign(tag.style, { left: '1500px', top: '200px' }); sec.appendChild(tag);
+  tl.from(tag, { opacity: 0, scale: .7, duration: .5, ease: 'back.out(2)' }, cue('onluk sayı sistemini', -.2));
+  G.forEach(([v, lab, nm, c], i) => {
+    const cd = h('div', { class: 'gcard card' }, `<div class="v">${lab}</div><svg viewBox="0 0 120 160"></svg><div class="n">${nm}</div>`);
+    cd.style.left = (120 + i * 242) + 'px'; sec.appendChild(cd);
+    const gg = glyph($('svg', cd), v);
+    gg.paths.forEach(draw);
+    const t = cue(c, -.3);
+    tl.from(cd, { opacity: 0, y: 40, duration: .6, ease: 'power3.out' }, t)
+      .to(gg.paths, { strokeDashoffset: 0, duration: .9, stagger: .15, ease: 'power2.inOut' }, t + .2);
+  });
+  // örnek alanı
+  const ex = h('div', { class: 'ex card' }, `<div class="q" style="left:36px;top:26px">Simgeyi tekrarla</div>`); sec.appendChild(ex);
+  const es = s('svg', { viewBox: '0 0 1680 260', style: 'position:absolute;inset:0;width:1680px;height:260px' }, ex);
+  const tR = cue('gerektiği kadar tekrarlıyorlardı', -.6);
+  tl.from(ex, { opacity: 0, y: 30, duration: .6 }, tR - .2);
+  const rep = s('g', {}, es); const repEls = [];
+  [[1, 3, '3'], [10, 3, '30'], [100, 3, '300']].forEach(([v, n, l], j) => {
+    const x0 = 120 + j * 520;
+    for (let q = 0; q < n; q++) { const gg = glyph(rep, v, x0 + q * 70, 70, .9, '#F4EEE3', 7); repEls.push(gg.g); }
+    const tt = txt(rep, x0 + 330, 180, '= ' + l, 'font:600 56px Fraunces Variable;fill:#FFC24B'); repEls.push(tt);
+  });
+  tl.from(repEls, { opacity: 0, y: 14, duration: .35, stagger: .1 }, tR + .2);
+  const t13 = cue('on üç yazacaklarsa', -.4);
+  tl.to(rep, { opacity: 0, duration: .5 }, t13);
+  const th = s('g', {}, es);
+  const g10 = glyph(th, 10, 220, 60, 1.05, '#FFC24B', 8), gl = [0, 1, 2].map(q => glyph(th, 1, 330 + q * 56, 60, 1.05, '#F4EEE3', 8));
+  const eqT = txt(th, 700, 175, '= 10 + 1 + 1 + 1 = 13', 'font:600 64px Fraunces Variable;fill:#F4EEE3');
+  const note = txt(th, 220, 245, 'önce büyük basamak', 'font:600 20px Inter Variable;fill:#FFC24B;letter-spacing:.14em');
+  [g10, ...gl].forEach(x => x.paths.forEach(draw));
+  const tN = cue('bir nal çiziyor', -.5);
+  tl.from(th, { opacity: 0, duration: .3 }, t13 + .3)
+    .to(g10.paths, { strokeDashoffset: 0, duration: .8 }, tN)
+    .from(note, { opacity: 0, duration: .5 }, tN + .2);
+  gl.forEach((x, q) => tl.to(x.paths, { strokeDashoffset: 0, duration: .4 }, cue('üç düz çizgi', -.3) + q * .35));
+  tl.from(eqT, { opacity: 0, x: -20, duration: .6 }, cue('üç düz çizgi', 1));
+  const fin = h('div', { class: 'tag r abs' }, 'İlkel: basamak değeri yok, simge tekrarı var'); Object.assign(fin.style, { left: '1080px', top: '990px' }); sec.appendChild(fin);
+  gsap.set(fin, { top: 1000, fontSize: 17 });
+  tl.from(fin, { opacity: 0, y: 10, duration: .5 }, cue('Buna ilkel', -.2));
+  return tl;
+};
+
+BUILD.islemler = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Dört işlem ve karekök', 'İşlemler'); headIn(tl, hd);
+  gsap.set(hd, { scale: .9, transformOrigin: '0 0' });
+  const ops = h('div', { class: 'ops' }, ['<b>+</b> Toplama', '<b>−</b> Çıkarma', '<b>×</b> Çarpma', '<b>÷</b> Bölme', '<b>√</b> Karekök'].map(t => `<div class="pill">${t}</div>`).join(''));
+  sec.appendChild(ops);
+  ops.style.left = '760px'; ops.style.top = '160px'; ops.style.right = 'auto'; ops.style.gap = '14px';
+  gsap.set($$('.pill', ops), { fontSize: 24, padding: '10px 20px' });
+  ['Toplama,', 'çıkarma,', 'çarpma,', 'bölme ve', 'karekök alma'].forEach((p, i) => tl.from($$('.pill', ops)[i], { opacity: 0, y: 20, scale: .8, duration: .5, ease: 'back.out(2)' }, cue(p, -.2)));
+  // kart 1: toplama-çıkarma
+  const c1 = box(sec, 'ocard card', 120, 330, 600, 640, `<div class="ctitle">Toplama · Çıkarma</div>
+    <div class="eq a0" style="margin-top:34px">12 <i>+</i> 25 <i>+</i> 31<div class="strk"></div></div>
+    <div class="csub b0" style="margin-top:6px;color:#FF5C8A">üçü birden toplanamıyor</div>
+    <div class="eq a1" style="margin-top:28px">12 <i>+</i> 25 <i>=</i> 37</div>
+    <div class="eq a2" style="margin-top:20px">37 <i>+</i> 31 <i>=</i> 68</div>
+    <div style="height:1px;background:var(--line);margin:30px 0 26px"></div>
+    <div class="eq a3">68 <i>−</i> 31 <i>=</i> ?</div>
+    <div class="eq a4" style="margin-top:20px">31&nbsp;<i>+</i>&nbsp;<span style="color:#FFC24B">37</span>&nbsp;<i>=</i>&nbsp;68</div>`);
+  const tI = cue('ikişer ikişer', -.3), tU = cue('üç sayıyı', -.3), tC = cue('Çıkarmayı', -.3);
+  tl.from(c1, { opacity: 0, y: 40, duration: .7 }, tI - .5)
+    .from($('.a1', c1), { opacity: 0, x: -20, duration: .5 }, tI)
+    .from($('.a2', c1), { opacity: 0, x: -20, duration: .5 }, tI + .9)
+    .from($('.a0', c1), { opacity: 0, x: -20, duration: .5 }, tU)
+    .from($('.strk', c1), { scaleX: 0, duration: .5 }, tU + .8)
+    .from($('.b0', c1), { opacity: 0, duration: .5 }, tU + 1)
+    .from($('.a3', c1), { opacity: 0, x: -20, duration: .5 }, tC)
+    .from($('.a4', c1), { opacity: 0, x: -20, duration: .5 }, tC + 1.2);
+  // kart 2: çarpma
+  const rows = [[1, 12], [2, 24], [4, 48], [8, 96]];
+  const c2 = box(sec, 'ocard card', 760, 330, 600, 640, `<div class="ctitle">Çarpma · ikiye katlama</div><div class="eq" style="margin-top:28px;font-size:56px">13 <i>×</i> 12</div>
+    <table class="dt">${rows.map(([a, b], i) => `<tr><td>${[0, 2, 3].includes(i) ? '<span class="ck">✓</span>' : ''}${a}</td><td>${b}</td></tr>`).join('')}</table>
+    <div class="csub r1" style="margin-top:22px">1 + 4 + 8 = 13</div>
+    <div class="eq r2" style="margin-top:12px;font-size:40px">12&nbsp;<i>+</i>&nbsp;48&nbsp;<i>+</i>&nbsp;96&nbsp;<i>=</i>&nbsp;<span style="color:#FFC24B">156</span></div>`);
+  const tM = cue('Çarpma ve bölmeyi', -.3), tK = cue('iki katını', -.3);
+  tl.from(c2, { opacity: 0, y: 40, duration: .7 }, tM)
+    .from($$('tr', c2), { opacity: 0, x: -20, duration: .4, stagger: .45 }, tK)
+    .from($$('.ck', c2), { opacity: 0, scale: 0, duration: .3, stagger: .25, ease: 'back.out(3)' }, tK + 2.2)
+    .from($('.r1', c2), { opacity: 0, duration: .5 }, tK + 2.8)
+    .from($('.r2', c2), { opacity: 0, y: 10, duration: .5 }, tK + 3.4);
+  // kart 3: karekök
+  const c3 = box(sec, 'ocard card', 1400, 330, 400, 640, `<div class="ctitle">Karekök</div><svg viewBox="0 0 330 300" style="width:330px;height:300px;margin-top:20px"></svg><div class="csub q1">Yapabiliyorlardı.</div><div class="tag r q2" style="margin-top:18px">Yöntemi bilinmiyor</div>`);
+  const ks = $('svg', c3);
+  const rad = s('path', { d: 'M20 170 L60 150 L110 260 L170 40 H310', stroke: '#FFC24B', 'stroke-width': 10, fill: 'none', 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, ks);
+  const qm = txt(ks, 240, 200, '?', 'font:600 130px Fraunces Variable;fill:#F4EEE3', { 'text-anchor': 'middle' });
+  draw(rad);
+  const tR = cue('Karekök alabildiklerini', -.3);
+  tl.from(c3, { opacity: 0, y: 40, duration: .7 }, tR)
+    .to(rad, { strokeDashoffset: 0, duration: 1.1, ease: 'power2.inOut' }, tR + .3)
+    .from($('.q1', c3), { opacity: 0, duration: .5 }, tR + 1)
+    .from(qm, { opacity: 0, scale: .5, svgOrigin: '240 160', duration: .5, ease: 'back.out(2)' }, cue('nasıl yaptıklarına', -.3))
+    .from($('.q2', c3), { opacity: 0, y: 10, duration: .5 }, cue('bir bilgimiz yok', -.3));
+  // sonuç
+  const tT = cue('temelinde toplama', -.6);
+  const ban = h('div', { class: 'banner' }, 'Bütün işlemlerin temelinde: <b>toplama</b>'); sec.appendChild(ban);
+  gsap.set(ban, { top: 990, fontSize: 40 });
+  tl.to([c1, c2, c3], { y: -14, duration: .5 }, tT)
+    .to($$('i', sec).filter(e => e.textContent.trim() === '+'), { color: '#FFC24B', scale: 1.25, duration: .4, stagger: .03 }, tT)
+    .from(ban, { opacity: 0, y: 20, duration: .6 }, tT + .3);
+  return tl;
+};
+
+BUILD.kesirler = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Birim kesirlerle yazım', 'Kesirler'); headIn(tl, hd);
+  gsap.set(hd, { scale: .9, transformOrigin: '0 0' });
+  const mini = h('div', { class: 'mini card' }, `<div class="lb">Hazır tablo</div><div class="r">2/27 = 1/18 + 1/54</div><div class="r hl">2/29 = 1/24 + 1/58 + 1/174 + 1/232</div><div class="r">2/31 = 1/20 + 1/124 + 1/155</div>`);
+  sec.appendChild(mini); mini.style.left = '1040px'; mini.style.top = '110px';
+  const ru = h('div', { class: 'tag g abs' }, 'bir cetvel gibi elinin altında'); Object.assign(ru.style, { left: '1040px', top: '330px' }); sec.appendChild(ru);
+  tl.from(mini, { opacity: 0, x: 40, duration: .7, ease: 'power3.out' }, cue('tablodan', -.4))
+    .from($$('.r', mini), { opacity: 0, duration: .3, stagger: .15 }, cue('tablodan', 0))
+    .from(ru, { opacity: 0, scale: .8, duration: .5, ease: 'back.out(2)' }, cue('cetvel', -.3));
+  const D = [24, 58, 174, 232];
+  const eq = h('div', { class: 'bigeq' }, `<span class="lhs">${fr(2, 29)}</span><span class="op e">=</span>${D.map((d, i) => `<span class="t">${fr(1, d)}</span>${i < 3 ? '<span class="op p">+</span>' : ''}`).join('')}`);
+  sec.appendChild(eq);
+  const terms = $$('.t', eq), plus = $$('.op.p', eq);
+  const tL = cue('iki bölü yirmi dokuz', -.3);
+  tl.from([$('.lhs', eq), $('.op.e', eq)], { opacity: 0, y: 30, duration: .6, stagger: .2 }, tL);
+  const tTerm = ['bir bölü yirmi dört', 'bir bölü elli sekiz', 'bir bölü yüz yetmiş dört', 'bir bölü iki yüz otuz iki'].map(p => cue(p, -.3));
+  terms.forEach((t, i) => tl.from(t, { opacity: 0, y: 30, duration: .5, ease: 'power3.out' }, tTerm[i]));
+  plus.forEach((p, i) => tl.from(p, { opacity: 0, duration: .4 }, tTerm[i + 1] - .2));
+  // şerit modeli
+  const svg = s('svg', { viewBox: '0 0 1920 1080', class: 'full' }); sec.appendChild(svg);
+  const L = 1400, x0 = 260, Y1 = 780, Y2 = 870, BH = 56;
+  const top = s('rect', { x: x0, y: Y1, width: L, height: BH, rx: 8, fill: '#FFC24B' }, svg);
+  const topT = txt(svg, x0 - 24, Y1 + 38, '2/29', 'font:600 32px Fraunces Variable;fill:#FFC24B', { 'text-anchor': 'end' });
+  tl.from(top, { scaleX: 0, svgOrigin: `${x0} 0`, duration: .9, ease: 'power3.out' }, tL + .4).from(topT, { opacity: 0, duration: .4 }, tL + .4);
+  const w = [29, 12, 4, 3].map(v => v / 48 * L), colz = ['#FF6B3D', '#38D6C4', '#6FA8FF', '#FF5C8A'];
+  let xx = x0;
+  w.forEach((ww, i) => {
+    const r = s('rect', { x: xx + 2, y: Y2, width: ww - 4, height: BH, rx: 8, fill: colz[i] }, svg);
+    const t = txt(svg, xx + ww / 2, Y2 + BH + 40, '1/' + D[i], 'font:600 26px Inter Variable;fill:' + colz[i], { 'text-anchor': 'middle' });
+    tl.from(r, { scaleX: 0, svgOrigin: `${xx} 0`, duration: .6, ease: 'power3.out' }, tTerm[i] + .2).from(t, { opacity: 0, duration: .4 }, tTerm[i] + .4);
+    xx += ww;
+  });
+  const okT = txt(svg, x0 + L + 24, Y2 + 38, '✓', 'font:700 40px Inter Variable;fill:#38D6C4');
+  tl.from(okT, { opacity: 0, scale: 0, svgOrigin: `${x0 + L + 34} ${Y2 + 26}`, duration: .4, ease: 'back.out(3)' }, tTerm[3] + 1);
+  // işaretsiz yan yana yazım
+  const tN = cue('hiçbir işaret', -.4);
+  tl.to(plus, { width: 26, opacity: 0, duration: .8, ease: 'power2.inOut' }, tN)
+    .to($('.lhs', eq), { opacity: .4, duration: .6 }, tN);
+  const jx = h('div', { class: 'tag t abs' }, 'Araya işaret yok · yalnızca yan yana'); Object.assign(jx.style, { left: '960px', top: '700px', transform: 'translateX(-50%)' }); sec.appendChild(jx);
+  tl.from(jx, { opacity: 0, y: 10, duration: .5 }, cue('yan yana yazarak', -.3));
+  return tl;
+};
+
+BUILD.geometri = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Pratik ölçüm', 'Geometri'); headIn(tl, hd);
+  const pos = [[120, 290], [980, 290], [120, 655], [980, 655]];
+  const C = pos.map(([x, y]) => { const c = h('div', { class: 'gq card' }); Object.assign(c.style, { left: x + 'px', top: y + 'px' }); sec.appendChild(c); return c; });
+  const S = C.map(c => s('svg', { viewBox: '0 0 400 295' }, c));
+  // A: dörtgen
+  C[0].insertAdjacentHTML('beforeend', `<div class="tx"><div class="tt">Dörtgenin alanı</div><div class="ff">A ≈ ${fr('a + c', 2)} × ${fr('b + d', 2)}</div><div class="ss"><span class="tag r">yaklaşık</span> &nbsp;tam formül yok</div></div>`);
+  const q = s('path', { d: 'M40 250 L340 268 L300 50 L80 30 Z', stroke: '#FFC24B', 'stroke-width': 5, fill: 'rgba(255,194,75,.1)', 'stroke-linejoin': 'round' }, S[0]);
+  const ql = [['a', 190, 286], ['b', 342, 160], ['c', 190, 28], ['d', 38, 140]].map(([t, x, y]) => txt(S[0], x, y, t, 'font:italic 600 30px Fraunces Variable;fill:#F4EEE3', { 'text-anchor': 'middle' }));
+  draw(q);
+  const tA = cue('dörtgenin alanını', -.4);
+  tl.from(C[0], { opacity: 0, y: 30, duration: .6 }, tA).to(q, { strokeDashoffset: 0, duration: 1.2 }, tA + .2).from(ql, { opacity: 0, duration: .3, stagger: .15 }, tA + 1)
+    .from($('.ff', C[0]), { opacity: 0, x: -14, duration: .5 }, tA + 1.4).from($('.ss', C[0]), { opacity: 0, duration: .5 }, cue('tam formülünü', -.2));
+  // B: üçgen oranları
+  C[1].insertAdjacentHTML('beforeend', `<div class="tx"><div class="tt">Üçgende sabit oranlar</div><div class="ff" style="font-size:30px">${fr('yükseklik', 'taban')} = sabit</div><div class="ss"><span class="tag t">trigonometrinin izleri</span></div></div>`);
+  const t1 = s('path', { d: 'M40 260 L140 260 L140 160 Z', stroke: '#38D6C4', 'stroke-width': 5, fill: 'rgba(56,214,196,.1)', 'stroke-linejoin': 'round' }, S[1]);
+  const t2 = s('path', { d: 'M170 260 L370 260 L370 60 Z', stroke: '#38D6C4', 'stroke-width': 5, fill: 'rgba(56,214,196,.1)', 'stroke-linejoin': 'round' }, S[1]);
+  const ang = [s('path', { d: 'M75 260 A35 35 0 0 0 65 236', stroke: '#FFC24B', 'stroke-width': 4, fill: 'none' }, S[1]), s('path', { d: 'M205 260 A35 35 0 0 0 195 236', stroke: '#FFC24B', 'stroke-width': 4, fill: 'none' }, S[1])];
+  const tB = cue('Üçgendeki belirli', -.4);
+  tl.from(C[1], { opacity: 0, y: 30, duration: .6 }, tB).from(t1, { opacity: 0, scale: .5, svgOrigin: '90 260', duration: .6 }, tB + .3)
+    .from(t2, { opacity: 0, scale: .5, svgOrigin: '270 260', duration: .6 }, cue('sabit kaldığından', -.6)).from(ang, { opacity: 0, duration: .4 }, cue('sabit kaldığından', 0))
+    .from($('.ff', C[1]), { opacity: 0, x: -14, duration: .5 }, cue('sabit kaldığından', .2)).from($('.ss', C[1]), { opacity: 0, duration: .5 }, cue('trigonometriye', -.3));
+  // C: pi
+  C[2].insertAdjacentHTML('beforeend', `<div class="tx"><div class="tt">π ≈ ${fr(19, 6)}</div><div class="ff" style="font-size:32px">${fr(19, 6)} = 3,1666…</div><div class="ss">Bugünkü değer: π = 3,1415…</div></div>`);
+  const cir = s('circle', { cx: 200, cy: 150, r: 110, stroke: '#FF6B3D', 'stroke-width': 5, fill: 'rgba(255,107,61,.08)' }, S[2]);
+  const dia = s('line', { x1: 90, y1: 150, x2: 310, y2: 150, stroke: '#F4EEE3', 'stroke-width': 3, 'stroke-dasharray': '8 6' }, S[2]);
+  draw(cir);
+  const tP = cue('Pi sayısını', -.4);
+  tl.from(C[2], { opacity: 0, y: 30, duration: .6 }, tP).to(cir, { strokeDashoffset: 0, duration: 1.2 }, tP + .2).from(dia, { opacity: 0, duration: .4 }, tP + 1)
+    .from($('.ff', C[2]), { opacity: 0, x: -14, duration: .5 }, cue('on dokuz bölü altı', -.2)).from($('.ss', C[2]), { opacity: 0, duration: .5 }, cue('on dokuz bölü altı', .8));
+  // D: ip gericiler
+  C[3].insertAdjacentHTML('beforeend', `<div class="tx"><div class="tt">İp gericiler</div><div class="ff" style="font-size:34px">3² + 4² = 5²</div><div class="ss">12 düğümlü iple <b style="color:#FFC24B">dik açı</b>: 3 · 4 · 5</div></div>`);
+  const u = 50, O = [70, 260];
+  const tri = []; for (let i = 0; i <= 3; i++) tri.push([O[0], O[1] - i * u]);
+  for (let i = 1; i <= 5; i++) tri.push([O[0] + i * 4 / 5 * u, O[1] - 3 * u + i * 3 / 5 * u]);
+  for (let i = 1; i <= 4; i++) tri.push([O[0] + 4 * u - i * u, O[1]]);
+  const K = tri.map((p, i) => ({ x: 30 + i * 28.5, y: 150 }));
+  const rope = s('polyline', { stroke: '#D9B45A', 'stroke-width': 4, fill: 'none', 'stroke-linejoin': 'round' }, S[3]);
+  const knots = K.map(() => s('circle', { r: 6, fill: '#FFC24B' }, S[3]));
+  const sq = s('path', { d: `M${O[0]} ${O[1] - 24} H${O[0] + 24} V${O[1]}`, stroke: '#FF5C8A', 'stroke-width': 4, fill: 'none' }, S[3]);
+  const nums = [['3', O[0] - 26, O[1] - 1.5 * u], ['4', O[0] + 2 * u, O[1] + 28], ['5', O[0] + 2 * u + 20, O[1] - 1.5 * u - 14]].map(([t, x, y]) => txt(S[3], x, y, t, 'font:600 28px Fraunces Variable;fill:#F4EEE3', { 'text-anchor': 'middle' }));
+  HOOKS.push(() => { rope.setAttribute('points', K.map(k => k.x + ',' + k.y).join(' ')); knots.forEach((c, i) => { c.setAttribute('cx', K[i].x); c.setAttribute('cy', K[i].y); }); });
+  const tR = cue('ip gericiler', -.5), tT = cue('üç, dört ve beş', -.3);
+  tl.from(C[3], { opacity: 0, y: 30, duration: .6 }, cue('Pisagor', -.4))
+    .from($('.ff', C[3]), { opacity: 0, x: -14, duration: .5 }, cue('Pisagor', .3))
+    .from([rope, ...knots], { opacity: 0, duration: .5 }, tR);
+  K.forEach((k, i) => tl.to(k, { x: tri[i][0], y: tri[i][1], duration: 1.6, ease: 'power3.inOut' }, tT));
+  tl.from(nums, { opacity: 0, duration: .4, stagger: .2 }, tT + 1.4).from(sq, { opacity: 0, duration: .4 }, cue('dik köşeler', -.2))
+    .from($('.ss', C[3]), { opacity: 0, duration: .5 }, cue('dik köşeler', .2))
+    .fromTo(sq, { scale: 1 }, { scale: 1.4, svgOrigin: `${O[0]} ${O[1]}`, duration: .3, yoyo: true, repeat: 3, immediateRender: false }, cue('dik açılarla', -.2));
+  return tl;
+};
+
+BUILD.denklemler = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Cebir', 'Denklemler'); headIn(tl, hd);
+  const c1 = box(sec, 'dcard card', 120, 290, 820, 690, `<div class="tag g">Birinci dereceden</div><div class="src" style="margin-top:22px">Rhind Papirüsü · Problem 24</div>
+    <div class="pr">“Bir miktar ve onun yedide biri birlikte 19 ediyor. Miktar nedir?”</div>
+    <div class="st x1" style="position:relative;display:inline-block;margin-top:34px">x + ${fr('x', 7)} = 19<div class="strk"></div></div><span class="tag r x2" style="margin-left:24px;vertical-align:middle">değişken yok</span>
+    <div class="st x3" style="margin-top:40px">Miktar = 16 + ${fr(1, 2)} + ${fr(1, 8)}</div>`);
+  const c2 = box(sec, 'dcard card', 980, 290, 820, 690, `<div class="tag t">İkinci dereceden</div><div class="src" style="margin-top:22px">Berlin Papirüsü · Orta Krallık</div>
+    <div class="pr">“İki karenin alanları toplamı 100. Birinin kenarı, ötekininkinin ${fr(1, 2)} + ${fr(1, 4)}’ü. Kenarlar nedir?”</div>
+    <svg viewBox="0 0 740 220" style="width:740px;height:220px;margin-top:20px"></svg>`);
+  const k2 = $('svg', c2);
+  const sqA = s('rect', { x: 40, y: 20, width: 176, height: 176, fill: 'rgba(56,214,196,.15)', stroke: '#38D6C4', 'stroke-width': 4 }, k2);
+  const sqB = s('rect', { x: 250, y: 64, width: 132, height: 132, fill: 'rgba(56,214,196,.15)', stroke: '#38D6C4', 'stroke-width': 4 }, k2);
+  const aT = txt(k2, 128, 118, '8', 'font:600 48px Fraunces Variable;fill:#F4EEE3', { 'text-anchor': 'middle' });
+  const bT = txt(k2, 316, 140, '6', 'font:600 48px Fraunces Variable;fill:#F4EEE3', { 'text-anchor': 'middle' });
+  const rt = txt(k2, 430, 100, '√100 = 10', 'font:600 44px Fraunces Variable;fill:#FFC24B');
+  const rt2 = txt(k2, 430, 170, '→ kenarlar 8 ve 6', 'font:600 34px Inter Variable;fill:#F4EEE3');
+  const t0 = cue('Birinci ve ikinci', -.3);
+  tl.from(c1, { opacity: 0, y: 40, duration: .7 }, t0).from(c2, { opacity: 0, y: 40, duration: .7 }, cue('ikinci dereceden', -.2));
+  const tV = cue('değişken kullanmayı', -.4);
+  tl.from($('.x1', c1), { opacity: 0, y: 14, duration: .5 }, tV).from($('.strk', c1), { scaleX: 0, duration: .5 }, tV + .9).from($('.x2', c1), { opacity: 0, scale: .7, duration: .4, ease: 'back.out(2)' }, tV + 1.2);
+  tl.from($('.x3', c1), { opacity: 0, y: 14, duration: .6 }, cue('tek bilinmeyenle', -.2));
+  const tK = cue('karekök yardımıyla', -.4);
+  tl.from([sqA, sqB], { opacity: 0, scale: .6, transformOrigin: '50% 50%', duration: .6, stagger: .2, ease: 'back.out(1.8)' }, tK - .6)
+    .from(rt, { opacity: 0, x: -14, duration: .5 }, tK + .2)
+    .from(rt2, { opacity: 0, x: -14, duration: .5 }, tK + 1)
+    .from([aT, bT], { opacity: 0, duration: .4, stagger: .2 }, tK + 1.4);
+  return tl;
+};
+
+BUILD.zayiflik = (sec, cue) => {
+  const tl = gsap.timeline();
+  const hd = head(sec, 'Sınırlar', 'Mısır matematiğinin zayıflıkları'); headIn(tl, hd);
+  const rc = h('div', { class: 'recipe' }); sec.appendChild(rc);
+  const rs = s('svg', { viewBox: '0 0 860 600' }, rc);
+  const sc = scrollSVG(rs, 40, 30, 780, 540, 71, { marks: false });
+  const lines = [['Şunu şöyle yap.', 'şunu şöyle yap'], ['Bunu böyle yap.', 'bunu böyle yap'], ['Bu problemle karşılaşırsan,', 'Yani belli bir problem'], ['   şunu yap.', 'ne yapman gerektiğini'], ['Sonuç budur.', 'temelde hesaplama']];
+  const lnEls = lines.map(([t, c], i) => { const d = h('div', { class: 'ln' }, (i === 3 ? '' : '▸ ') + t); d.style.top = (100 + i * 82) + 'px'; if (i === 3) d.style.left = '150px'; rc.appendChild(d); return [d, c]; });
+  const tE = cue('emir kipinde', -.4);
+  tl.from(rc, { opacity: 0, y: 30, duration: .7 }, Math.min(1.5, tE - 1));
+  const imp = h('div', { class: 'tag abs', style: 'background:#FF6B3D;color:#1a0f08' }, 'emir kipi'); Object.assign(imp.style, { left: '640px', top: '46px' }); rc.appendChild(imp);
+  tl.from(imp, { opacity: 0, scale: .6, rotation: -8, duration: .5, ease: 'back.out(2)' }, tE);
+  lnEls.forEach(([d, c]) => tl.fromTo(d, { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 1, ease: 'none' }, cue(c, -.3)));
+  // terazi
+  const sc2 = h('div', { class: 'scale' }); sec.appendChild(sc2);
+  const ss = s('svg', { viewBox: '0 0 760 600' }, sc2);
+  s('path', { d: 'M380 120 V520 M300 520 H460', stroke: '#8F96B2', 'stroke-width': 8, 'stroke-linecap': 'round' }, ss);
+  s('circle', { cx: 380, cy: 120, r: 14, fill: '#8F96B2' }, ss);
+  const beam = s('line', { x1: 120, y1: 120, x2: 640, y2: 120, stroke: '#F4EEE3', 'stroke-width': 8, 'stroke-linecap': 'round' }, ss);
+  const pan = (lbl, col) => {
+    const g = s('g', {}, ss);
+    s('path', { d: 'M0 0 L-80 150 M0 0 L80 150', stroke: 'rgba(244,238,227,.5)', 'stroke-width': 2 }, g);
+    s('path', { d: 'M-100 150 H100 Q90 190 0 190 Q-90 190 -100 150 Z', fill: col }, g);
+    txt(g, 0, 240, lbl, 'font:600 34px Fraunces Variable;fill:#F4EEE3', { 'text-anchor': 'middle' });
+    return g;
+  };
+  const pL = pan('Teori', '#3A4372'), pR = pan('Hesaplama', '#FF6B3D');
+  const wts = s('g', {}, pR);
+  [[-50, 0], [0, 0], [50, 0], [-25, -40], [25, -40], [0, -80]].forEach(([x, y]) => s('rect', { x: x - 22, y: 106 + y, width: 44, height: 40, rx: 6, fill: '#FFC24B', stroke: '#1a0f08', 'stroke-width': 2 }, wts));
+  const tiny = s('rect', { x: -12, y: 128, width: 24, height: 18, rx: 4, fill: '#8F96B2' }, pL);
+  const tinyT = txt(pL, 0, 276, 'yalnızca kaynağa değinme', 'font:500 20px Inter Variable;fill:#8F96B2', { 'text-anchor': 'middle' });
+  const B = { a: 0 };
+  HOOKS.push(() => {
+    const a = B.a * Math.PI / 180, c = Math.cos(a), sn = Math.sin(a);
+    beam.setAttribute('x1', 380 - 260 * c); beam.setAttribute('y1', 120 - 260 * sn); beam.setAttribute('x2', 380 + 260 * c); beam.setAttribute('y2', 120 + 260 * sn);
+    pL.setAttribute('transform', `translate(${380 - 260 * c} ${120 - 260 * sn})`); pR.setAttribute('transform', `translate(${380 + 260 * c} ${120 + 260 * sn})`);
+  });
+  const tH = cue('temelde hesaplama', -.4);
+  tl.from(sc2, { opacity: 0, x: 40, duration: .7 }, cue('Papirüslerde teorik', -.3))
+    .from(wts.children, { opacity: 0, y: -60, duration: .4, stagger: .12, ease: 'bounce.out' }, tH)
+    .to(B, { a: 14, duration: 1.4, ease: 'elastic.out(1,.5)' }, tH + .4);
+  const no = h('div', { class: 'tag r abs' }, 'Teori ≈ yok'); Object.assign(no.style, { left: '1080px', top: '672px' }); sec.appendChild(no);
+  tl.from(no, { opacity: 0, scale: .6, duration: .5, ease: 'back.out(2)' }, cue('Teoriye hemen hiç', -.2))
+    .from(tiny, { opacity: 0, y: -40, duration: .5, ease: 'bounce.out' }, cue('kaynağına', -.3))
+    .from(tinyT, { opacity: 0, duration: .5 }, cue('kaynağına', 0))
+    .to(B, { a: 12.5, duration: .6 }, cue('kaynağına', 0));
+  const fin = h('div', { class: 'cap' }, 'Uygulamalı matematiğin <b>çok ilkel</b> bir hâli'); fin.style.top = '940px'; sec.appendChild(fin);
+  tl.from(fin, { opacity: 0, y: 20, duration: .7 }, cue('uygulamalı matematiğin', -.4));
+  return tl;
+};
+
+BUILD.kapanis = (sec, cue) => {
+  const tl = gsap.timeline();
+  const A = h('div', { class: 'full' }); sec.appendChild(A);
+  const hd = head(A, 'Bir sonraki bölüme köprü', 'Mısır ve Mezopotamya'); headIn(tl, hd);
+  const same = h('div', { class: 'same' }); A.appendChild(same);
+  const ssv = s('svg', { viewBox: '0 0 1680 30', style: 'width:1680px;height:30px' }, same);
+  const br = s('path', { d: 'M400 28 V12 H1280 V28', stroke: '#8F96B2', 'stroke-width': 3, fill: 'none' }, ssv);
+  const brT = h('div', { class: 'tag g abs' }, 'Aynı dönem'); Object.assign(brT.style, { left: '840px', top: '-32px', transform: 'translateX(-50%)' }); same.appendChild(brT);
+  const mk = (x, nm, sb, col) => box(A, 'cmp card', x, 340, 800, 560, `<div class="nm" style="color:${col}">${nm}</div><div class="sb">${sb}</div>
+    <div class="rw r1"><div class="rl">Matematik</div><div style="display:flex;align-items:center;gap:20px"><div class="bar" style="width:620px;background:rgba(255,255,255,.06);position:relative"><div class="fill bar" style="position:absolute;left:0;top:0;background:${col}"></div></div></div></div>
+    <div class="rw r2"><div class="rl">Coğrafi ve sosyal koşullar</div><div class="cond"></div></div>
+    <div class="rw r3"></div>`);
+  const E = mk(120, 'Mısır', 'Nil · papirüs', '#FFC24B'), M = mk(1000, 'Mezopotamya', 'Dicle–Fırat · kil tablet', '#38D6C4');
+  $('.fill', E).style.width = '200px'; $('.fill', M).style.width = '560px';
+  $('.cond', E).innerHTML = '<span class="tag t">daha elverişli</span>'; $('.cond', M).innerHTML = '<span class="tag r">daha elverişsiz</span>';
+  $('.r3', E).innerHTML = '<div class="li l1">İşlemler: <b>toplama etrafında</b></div><div class="li l2">Geometri: <b>yaklaşık değerler</b></div>';
+  $('.r3', M).innerHTML = '<div class="li m1" style="font:600 34px var(--serif);color:#38D6C4">Daha gelişmiş ✓</div>';
+  const t0 = cue('Mezopotamya uygarlığıyla', -.3);
+  tl.from(E, { opacity: 0, y: 40, duration: .7 }, t0).from(M, { opacity: 0, y: 40, duration: .7 }, t0 + .3);
+  draw(br);
+  const tS = cue('aynı dönemde', -.3);
+  tl.to(br, { strokeDashoffset: 0, duration: .8 }, tS).from(brT, { opacity: 0, y: 10, duration: .5 }, tS + .3);
+  const tG = cue('çok geride', -.4);
+  tl.from([$('.fill', E), $('.fill', M)], { width: 0, duration: 1.2, stagger: .2, ease: 'power3.out' }, tG);
+  const tC = cue('coğrafi ve sosyal', -.3);
+  tl.from([$('.cond span', E), $('.cond span', M)], { opacity: 0, scale: .7, duration: .5, stagger: .4, ease: 'back.out(2)' }, tC)
+    .from($('.m1', M), { opacity: 0, x: -14, duration: .5 }, cue('daha gelişmiştir', -.3))
+    .from($('.l1', E), { opacity: 0, x: -14, duration: .5 }, cue('yalnızca toplama', -.3))
+    .from($('.l2', E), { opacity: 0, x: -14, duration: .5 }, cue('yaklaşık değerlerdi', -.3));
+  // kapanış
+  const tO = cue('Bir sonraki videoda', -.3);
+  tl.to(A, { opacity: 0, y: -30, duration: .7, ease: 'power2.in' }, tO);
+  const O = h('div', { class: 'outro' }, `<div class="eyebrow">Sıradaki bölüm</div><div class="big">Mezopotamya Matematiği</div><svg viewBox="0 0 900 220"></svg><div class="bye">Görüşmek üzere!</div>`);
+  sec.appendChild(O);
+  const os = $('svg', O);
+  const vw = (x, y) => { const g = s('g', {}, os); s('path', { d: `M${x - 22} ${y - 30} H${x + 22} L${x} ${y - 6} Z`, fill: '#FFC24B' }, g); s('line', { x1: x, y1: y - 10, x2: x, y2: y + 70, stroke: '#FFC24B', 'stroke-width': 8, 'stroke-linecap': 'round' }, g); return g; };
+  const cw = (x, y) => { const g = s('g', {}, os); s('path', { d: `M${x + 40} ${y - 30} L${x - 10} ${y} L${x + 40} ${y + 30}`, stroke: '#FFC24B', 'stroke-width': 8, fill: 'none', 'stroke-linecap': 'round' }, g); s('path', { d: `M${x - 22} ${y} L${x + 2} ${y - 16} L${x + 2} ${y + 16} Z`, fill: '#FFC24B' }, g); return g; };
+  const wedges = [vw(150, 70), cw(440, 100), vw(750, 70)];
+  const lbs = ['1', '10', '60'].map((t, i) => txt(os, [150, 450, 750][i], 205, t, 'font:650 26px Inter Variable;fill:#8F96B2;letter-spacing:.1em', { 'text-anchor': 'middle' }));
+  tl.from($('.eyebrow', O), { opacity: 0, y: 20, duration: .6 }, tO + .6)
+    .from($('.big', O), { opacity: 0, y: 50, duration: 1, ease: 'power3.out' }, tO + .8)
+    .from(wedges, { opacity: 0, y: -30, scale: .6, transformOrigin: '50% 50%', duration: .6, stagger: .3, ease: 'back.out(2)' }, tO + 1.3)
+    .from(lbs, { opacity: 0, duration: .4, stagger: .3 }, tO + 1.6)
+    .from($('.bye', O), { opacity: 0, y: 30, duration: .8, ease: 'power3.out' }, cue('görüşmek üzere', -.2));
+  return tl;
+};
+
+/* ---------- ana zaman çizelgesi ---------- */
+const master = gsap.timeline({ paused: true });
+const root = $('#scenes');
+SC.forEach((sc, i) => {
+  const sec = h('section', { class: 'scene', id: 's-' + sc.id }); root.appendChild(sec);
+  const cue = mkCue(sc);
+  const tl = BUILD[sc.id](sec, cue, sc);
+  master.add(tl, sc.start);
+  master.fromTo(sec, { autoAlpha: 0, scale: 1.02 }, { autoAlpha: 1, scale: 1, duration: .7, ease: 'power2.out', immediateRender: i === 0 }, sc.start);
+  master.to(sec, { autoAlpha: 0, scale: .985, duration: .6, ease: 'power2.in' }, sc.start + sc.dur - .6);
+});
+master.fromTo('#progress', { scaleX: 0 }, { scaleX: 1, duration: TOTAL, ease: 'none' }, 0);
+master.fromTo('#blob1', { x: 0, y: 0 }, { x: 900, y: 500, duration: TOTAL, ease: 'sine.inOut' }, 0);
+master.fromTo('#blob2', { x: 0, y: 0 }, { x: -800, y: -300, duration: TOTAL, ease: 'sine.inOut' }, 0);
+master.set({}, {}, TOTAL);
+
+// gren dokusu
+(() => { const c = document.createElement('canvas'); c.width = c.height = 256; const x = c.getContext('2d'); const R = rng(1); const d = x.createImageData(256, 256);
+  for (let i = 0; i < d.data.length; i += 4) { const v = R() * 255; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255; }
+  x.putImageData(d, 0, 0); $('#grain').style.backgroundImage = `url(${c.toDataURL()})`; })();
+
+const sceneNo = $('#sceneNo');
+HOOKS.push(() => {
+  const t = master.time(); let i = SC.findIndex(s => t < s.start + s.dur); if (i < 0) i = SC.length - 1;
+  sceneNo.innerHTML = `<b>${String(i + 1).padStart(2, '0')}</b> / ${SC.length} &nbsp;·&nbsp; ${SC[i].title}`;
+});
+function onFrame() { HOOKS.forEach(f => f()); }
+window.renderFrame = t => { master.seek(t, false); onFrame(); };
+window.TOTAL = TOTAL; window.MISSING = MISSING;
+if (MISSING.length) console.error('Eksik ipuçları:', MISSING);
+
+/* ---------- önizleme ---------- */
+const stage = $('#stage');
+function fit() { if (RENDER) return; const W = innerWidth, H = innerHeight - 64; stage.style.transform = `scale(${Math.min(W / 1920, H / 1080)})`; }
+addEventListener('resize', fit); fit();
+const scrub = $('#scrub'), tm = $('#tm'), btn = $('#play');
+scrub.max = TOTAL;
+const mmss = t => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+gsap.ticker.add(() => { if (master.isActive() || !master.paused()) { onFrame(); scrub.value = master.time(); } tm.textContent = `${mmss(master.time())} / ${mmss(TOTAL)}`; });
+btn.onclick = () => { if (master.paused()) { if (master.time() >= TOTAL) master.seek(0); master.play(); btn.textContent = 'Duraklat'; } else { master.pause(); btn.textContent = 'Oynat'; } };
+scrub.oninput = () => { master.pause(); btn.textContent = 'Oynat'; window.renderFrame(+scrub.value); };
+addEventListener('keydown', e => { if (e.code === 'Space') { e.preventDefault(); btn.onclick(); } });
+document.fonts.ready.then(() => { window.renderFrame(0); window.READY = true; });
+</script>
+</body>
+</html>

@@ -3,3 +3,7 @@ node_modules/
 cikti/*.mp4
 cikti/*.png
 cikti/*.log
+**/cikti/*.mp4
+**/cikti/*.png
+**/cikti/*.log
+__pycache__/

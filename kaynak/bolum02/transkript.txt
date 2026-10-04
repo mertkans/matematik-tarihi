@@ -1,0 +1,95 @@
+[   0.0-   9.7] Arkadaşlar merhaba. Bugünkü matematik tarihi videomuzun konusu Mısır döneminde matematik.
+[   9.7-  17.7] Şimdi bu döneme geçmeden önce genel olarak eski çağları düşündüğümüzde taş çağında,
+[  17.7-  24.7] yakın çağdan önce, yakın çağdaki neolitik dönemden önce yerleşik hayat yok.
+[  24.7-  34.7] Dolayısıyla tarım, hayvancılık ve üretim yok. Dolayısıyla o döneme kadar olan matematiğe olan ihtiyaçla
+[  34.7-  39.7] o dönem ve sonrasındaki matematiğe olan ihtiyaç ciddi anlamda değişiyor.
+[  39.7-  48.7] Yani neolitik dönemde matematiğe olan ihtiyaç artıyor. Bilime olan ihtiyaç dolayısıyla artıyor.
+[  48.7-  54.7] Mısırlılara gelecek olursak Mısırlılar Nil Nehri'nin etrafında yaşıyorlar.
+[  54.7-  64.7] Haritada Salis, Menfis, Tiniz gibi yerleşim yerleri Nil Nehri'nin etrafında bulunmakta.
+[  64.7-  78.8] Genel olarak eski dönem medeniyetlerinin çoğunlukla nehir kenarlarında veya bunun haricinde de deniz kenarlarında yerleştiklerini söylemiştik.
+[  78.8-  88.8] Mısır matematiği milattan önce 3500 yıllarından itibaren bize bilgiler veriyor.
+[  88.8-  98.8] Ancak bizim elimizdeki bilgilerin çoğunluğu Orta Krallık döneminde eksi 2000 ile eksi 1600 arasında yazılmış.
+[  98.8- 106.8] Yani elimizdeki çoğu yazılı Mısır matematiği ile ilgili Papyrus bu dönemde yazılmıştır.
+[ 106.8- 114.8] Genel olarak Mısır matematiğinde veya önümüzdeki gelecek birkaç medeniyette de aynı şeyi söyleyeceğiz.
+[ 114.8- 126.8] Astronomi matematik ve geometri birbiriyle ilişkili olarak gelişmiş yani birbirlerinin bu bilim dallarının birbirlerine olan ihtiyacından dolayı gelişmiş.
+[ 126.8- 130.8] Yani şunu demeye çalışıyoruz.
+[ 130.8- 140.8] Nil nehrinin taşması sonucu örneğin tarlalarda parserlerde yani tarlaların alanlarında bozulmalar olmuş.
+[ 140.8- 148.8] Bu alanları bu bozulmaları düzgün bir şekilde hesaplayabilmek için geometri ve matematiğe ihtiyaç olmuş.
+[ 148.8- 158.8] Ama Nil nehrinin taşması sorunu aynı zamanda bir astronomi olayı olduğu için bu nehrin taşacağı zamanı hesaplamak için astronomi de gelişmiş.
+[ 158.8- 170.7] Bunlar birbiriyle bağlantılı şekilde yani bu sorunu çözmek için bu bilim dalları birbiriyle bağlantılı şekilde gelişmiş diyebiliriz.
+[ 170.7- 176.7] Bizim Mısır matematiği ile ilgili kaynaklarımız Papyrus'lardır.
+[ 176.7- 186.7] Papyrus Mısır koçanına benzeyen ince bir kağıttır. Dolayısıyla saklanması veya ömrü uzun değildir.
+[ 186.7- 188.7] Saklanması zordur.
+[ 188.7- 204.7] O yüzden doğrudan elimizde mesela milattan önce 1650 yılında yazılan Papyrus'un kendisi yoktur da onun kopyası bir şekilde ilerleyen dönemlerde kopyalanmış hali mevcuttur.
+[ 204.7- 212.7] Matematik ile ilgili iki tane Papyrus bulunmakta içinde yoğunlukla matematiğin bulundu.
+[ 212.7- 218.7] Bir tanesi Rind yani Ahmet Papyrus'u bir tanesi de Moskova Papyrus'u.
+[ 218.7- 233.7] Bunlar aslında genel olarak birbiriyle çok benzer özellikler göstermekte biz neredeyse bütün matematiği dolayısıyla Rind Ahmet Papyrus'undan aktarıyoruz diyebiliriz.
+[ 233.7- 242.7] Moskova Papyrus'u biraz daha Ahmet Papyrus'un kopyası gibi çok az geliştirmeli hali gibi diyebiliriz.
+[ 242.7- 247.9] Ahmet Papyrus'un da neler vardır ve özellikleri nedir ona bakalım.
+[ 247.9- 251.9] Milattan önce 1650'de yazılmış.
+[ 251.9- 258.4] Matematiğin farklı davlarıyla alakalı bilgileri içeriyor.
+[ 258.4- 261.4] Neler içerildiğini ilerleyen startlarda göreceğiz.
+[ 261.4- 267.4] Dediğim gibi ince korunması zor olan geniş bir mısır koçanını aldırmakta Papyrus'lar.
+[ 267.4- 269.4] Şu anda British Museum'de yer alıyor.
+[ 269.4- 281.4] Antikacı Alexander Rind tarafından bulunduğu için adı Rind Papyrus'u yaklaşık 1650 yılından 200 yıl sonra kopyalanmıştır.
+[ 281.4- 290.4] Burada önemli olarak dikkat etmemiz gereken şey kendi Milattan önce 1650 yılında yazılmış olmasına rağmen
+[ 290.4- 295.4] eksi 3500'den yani Milattan önce 3500'den bilgiler içermekte.
+[ 295.4- 300.4] Genel olarak Papyrus tablolardan ve problemlerden oluşmakta.
+[ 300.4- 306.4] Bizim bu tablolar için en çok dikkatimizi çeken tablo Birim Kesirler tablosu.
+[ 306.4- 312.4] Payı 2 olan keserlerin Birim Keseriler cinsinden ifade edilişini gösteriyor bu tablo.
+[ 312.4- 317.4] Moskova Papyrus'u da az önce söylediğimiz gibi Ahmet Papyrus'una çok benziyor.
+[ 317.4- 319.4] Yine Birim Kesir listesini içeriyor.
+[ 319.4- 321.4] 25 tane problem var.
+[ 321.4- 326.4] İki problem halinde çoğu şey Rind Papyrus'una benziyor.
+[ 326.4- 333.9] Genel olarak Mısır matematiğinde matematiğin alt dalları olarak düşünecek olursak sayılar.
+[ 333.9- 335.9] Sayıları bu şekilde gösteriyorlar.
+[ 335.9- 337.9] Onluk sayı sistemini kullanıyorlar.
+[ 337.9- 340.9] Ancak bu onluk sayı sistemi ilkel bir sayı sistemi.
+[ 340.9- 344.9] Tekrarlayan şekilde simgeyi gösteriyorlar.
+[ 347.5- 356.5] Yani mesela 13 yazacaklarsa 3 tane düz çizgi bir tane de nal şekli çiziyorlar.
+[ 356.5- 358.5] Önce tabi büyü çiziyorlar.
+[ 358.5- 360.5] Nal sonra 3 tane çizgi şeklinde.
+[ 360.5- 364.5] Bunu ilkel bir onluk sayı sistemi olarak adlandırıyoruz.
+[ 364.5- 369.5] İşlem olarak toplama, çıkartma, çarpma, bölme ve karı kök alma yapabiliyorlar.
+[ 370.5- 374.5] Toplamayı biliyorlar, ikişerli işlem yapıyorlar.
+[ 374.5- 377.5] 3 tane sayıyı yan yana yazıp toplayamıyorlar.
+[ 377.5- 382.5] Toplamanın üzerine toplama mantığıyla çıkarma yapıyorlar.
+[ 382.5- 387.5] Çarpma ve bölmeyi de tekrarlı toplama üzerinden yapıyorlar.
+[ 387.5- 392.5] İkişerli olarak yani toplama iki katını alarak toplama yapıyorlar.
+[ 392.5- 395.5] Karı kök alma işlemini yapabildiklerini biliyoruz.
+[ 395.5- 399.5] Yani bir sayının karı kökünü dışarı çıkarttıklarını biliyoruz.
+[ 399.5- 403.5] Ama bu işlemin nasıl yaptıklarıyla ilgili bir bilgimiz bulunmamakta.
+[ 403.5- 407.5] Bütün işlemlerinin temelinde de toplamanın olduğunu biliyoruz.
+[ 407.5- 415.9] Genel olarak kesirleri, az önce söylediğim gibi kesir tablosundan yardım alarak birim kesirler cinsinden yazıyorlar.
+[ 415.9- 418.9] Yani bunu bir hazarelerinde cetvel gibi bulunuyorlar.
+[ 418.9- 430.9] Ve kesirleri gösterirken, örneğin 2 bölü 29 kesrini 1 bölü 24, 1 bölü 58, 1 bölü 174, 1 bölü 232 diye yazarken
+[ 430.9- 440.9] bunu direkt olarak 1 bölü 24, 1 bölü 58, 1 bölü 174, 1 bölü 232 diye aralarına herhangi bir şart koymadan yazıyorlar.
+[ 440.9- 450.7] Geometriyle ilgili bildikleri dörtgen alanını yaklaşık olarak hesaplayabiliyorlar.
+[ 450.7- 452.7] Tam formülünü bilmiyorlar.
+[ 452.7- 458.7] Genel olarak trigonometrik oranlarla yani üçgenin belirli oranlarını biliyorlar.
+[ 458.7- 466.7] Bunu yani üçgenindeki oranların sabitliğinden yola çıkarak hesaplar yaptıklarını görüyoruz.
+[ 466.7- 470.7] Buradan trigonometriyle ilgili bilgilerin olduğunu söyleyebiliyoruz.
+[ 470.7- 475.7] Pi sayısını yaklaşık 19 bölü 6 olarak kullanıyorlar.
+[ 475.7- 481.7] Ve pisakor teoremini bildiklerini ip gericiler olduklarını biliyoruz.
+[ 481.7- 491.7] Yani ellerinde 3, 4 ve 5 bilim uzunluğundaki bir ip parçasıyla
+[ 491.7- 499.7] dik köşeler oluşturabildiklerini yani arazilerini dik olacak şekilde bölebildiklerini biliyoruz.
+[ 499.7- 507.7] Mısır matematiğinin zayıflıklarına geçmeden önce yine C1 ile alakalı da birinci ve ikinci dereceden denklemlerle ilgili
+[ 507.7- 510.7] çözümler yaptıklarında söyleyebiliriz.
+[ 510.7- 514.7] Problem çözümlerinde değişken kullanmayı bilmiyorlar tabi.
+[ 514.7- 521.7] Sadece bir değişkenle çözebilecek bir problemi çözebildiklerini veya karaköka olarak
+[ 521.7- 527.7] ikinci dereceden bazı problemleri de çözebildiklerini biliyoruz.
+[ 527.7- 530.7] Mısır matematiğinin zayıflıklarına gelecek olursak
+[ 530.7- 534.7] papürselerde doğrudan aslında teorik bir şey bulunmamakta
+[ 534.7- 539.7] genellikle emir kipinde şunu şöyle yap bunu böyle yap şeklinde tarifler yer almakta.
+[ 539.7- 544.7] Yani belirli problem türlerinde şöyle bir problemle karşılaşırken
+[ 544.7- 551.7] karşılaşırsan şunu yapacaksın şeklinde temel olarak hesaplamaları içermekte.
+[ 551.7- 556.7] Teori ile alakalı herhangi bir şeye yer vermemişler.
+[ 556.7- 564.7] Sadece hesaplamayı nereden geldiğini göstermek için hesaplamanın bazı yerlerde kaynağından bahsetmişler.
+[ 564.7- 575.0] Genel olarak aslında Mısırların yaptığı şey uygulamalı matematiğin çok ilkel halidir diyebiliriz.
+[ 575.0- 581.0] Bundan sonra işleyeceğimiz Mezopotamya uygarlığıyla kıyasladığımızda
+[ 581.0- 587.0] Mısır'ın aynı dönem olmalarına rağmen Mısır'ın çok geride olduğunu söyleyebiliriz.
+[ 587.0- 589.0] Çok ilkel bir şekilde işlemler yaptı.
+[ 589.0- 593.0] Mesela işlemlerin sadece toplamaya etrafında olduğunu ve
+[ 593.0- 596.0] işte geometri ile ilgili hesaplamalarının yaklaşık değerler olduğunu söyledik.
+[ 596.0- 600.0] Bunlar Mezopotamya'ya göre çok az gelişmiştir.
+[ 600.0- 603.0] Bir sonraki videoda görüşmek üzere.

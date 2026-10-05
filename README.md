@@ -32,10 +32,11 @@ Her şey `bolum02/` klasöründe; animasyon kökteki `animasyon/vendor/` dosyala
 | `bolum02/animasyon/index.html` | Animasyonun kaynağı (tarayıcıda açılabilir) |
 | `bolum02/seslendirme_elevenlabs.md` | Sahne sahne seslendirme metni, dosya adları, sessiz videodaki zamanlar |
 | `bolum02/seslendirme_tek_parca.txt` | Aynı metin, tek parça |
+| `bolum02/seslendirme_ai_studio.txt` | Google AI Studio için: stil talimatlı, üç parça |
 
 ```bash
 npm run render:02                                   # sessiz video → bolum02/cikti/matematik_tarihi_misir_donemi_sessiz.mp4
-python3 ses_bol.py bolum02 ~/Downloads/misir.mp3    # tek parça sesi bolum02/ses/01_… 15_… olarak böler
+python3 ses_bol.py bolum02 parca1.wav parca2.wav parca3.wav   # AI Studio parçalarını birleştirip 01_… 15_… olarak böler
 npm run render:02:ses                               # sesli video → bolum02/cikti/matematik_tarihi_misir_donemi_sesli.mp4
 node render.mjs --bolum bolum02 --stills 30,95      # kontrol kareleri
 ```

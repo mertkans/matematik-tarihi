@@ -2,20 +2,29 @@
 
 Kullanım:
   python3 ses_bol.py bolum02 seslendirme.mp3          → bolum02/ses/01_giris.mp3 … 15_kapanis.mp3
+  python3 ses_bol.py bolum02 parca1.wav parca2.wav parca3.wav   → parçalar sırayla birleştirilir
   python3 ses_bol.py . ses/video1.mp3                 → Bölüm 01 (kök klasör)
 
 Whisper (faster-whisper) kelime zaman damgalarını scenes.json metniyle hizalar,
 her sahnenin ilk kelimesinden hemen önceki sessizliğin ortasından keser.
 Gerekenler: pip install faster-whisper
 """
-import json, re, subprocess, sys, difflib
+import json, os, re, subprocess, sys, difflib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 base = (ROOT / sys.argv[1]).resolve()
-src = Path(sys.argv[2]).resolve()
-model_name = sys.argv[3] if len(sys.argv) > 3 else 'medium'
 FF = str(ROOT / 'node_modules/ffmpeg-static/ffmpeg')
+model_name = os.environ.get('WHISPER_MODEL', 'medium')
+inputs = [Path(a).resolve() for a in sys.argv[2:]]
+if len(inputs) == 1:
+    src = inputs[0]
+else:  # birden çok parça: sırayla tek dosyada birleştir
+    src = base / 'ses_birlesik.wav'
+    cmd = [FF, '-y', '-hide_banner', '-loglevel', 'error']
+    for f in inputs: cmd += ['-i', str(f)]
+    cmd += ['-filter_complex', ''.join(f'[{i}:a]' for i in range(len(inputs))) + f'concat=n={len(inputs)}:v=0:a=1[a]', '-map', '[a]', '-ar', '48000', str(src)]
+    subprocess.run(cmd, check=True)
 
 scenes = json.loads((base / 'scenes.json').read_text('utf8'))
 TR = str.maketrans('İIÂÎÛ', 'iıâîû')

@@ -1,0 +1,786 @@
+[
+{
+"tag": "TALIMAT",
+"s": 0.215,
+"e": 4.884,
+"ratio": 0.9,
+"t": "Aşağıdaki metni Türkçe olarak, matematik tarihi an"
+},
+{
+"tag": "TALIMAT",
+"s": 5.73,
+"e": 8.217,
+"ratio": 1.05,
+"t": "Ton sakin, sıcak ve anlaşılır olsun;"
+},
+{
+"tag": "TALIMAT",
+"s": 8.625,
+"e": 10.865,
+"ratio": 1.24,
+"t": "hız orta, ne aceleci ne ağır."
+},
+{
+"tag": "TALIMAT",
+"s": 11.522,
+"e": 16.348,
+"ratio": 0.98,
+"t": "Cümle sonlarında doğal bir duraklama yap, her para"
+},
+{
+"tag": "TALIMAT",
+"s": 17.143,
+"e": 19.21,
+"ratio": 0.89,
+"t": "Sayıları ve tarihleri yazıldığı gibi oku."
+},
+{
+"tag": "TALIMAT",
+"s": 19.672,
+"e": 21.877,
+"ratio": 0.89,
+"t": "Metne bir şey ekleme, hiçbir şeyi atlama."
+},
+{
+"tag": "S01*",
+"s": 23.433,
+"e": 23.895,
+"ratio": 1.03,
+"t": "Merhaba!"
+},
+{
+"tag": "S01",
+"s": 24.309,
+"e": 28.585,
+"ratio": 1.04,
+"t": "Bugünkü matematik tarihi videomuzun konusu, Mısır "
+},
+{
+"tag": "S01",
+"s": 29.417,
+"e": 36.955,
+"ratio": 1.09,
+"t": "Mısırlıların nasıl saydığını, nasıl hesap yaptığın"
+},
+{
+"tag": "S02*",
+"s": 38.763,
+"e": 41.582,
+"ratio": 0.88,
+"t": "Bu döneme geçmeden önce eski çağları kısaca hatırl"
+},
+{
+"tag": "S02",
+"s": 42.54,
+"e": 47.315,
+"ratio": 0.99,
+"t": "Taş Çağı'nın neolitik dönemine, yani Cilalı Taş Ça"
+},
+{
+"tag": "S02",
+"s": 47.934,
+"e": 51.445,
+"ratio": 1.18,
+"t": "Dolayısıyla tarım, hayvancılık ve üretim de yoktu."
+},
+{
+"tag": "S02",
+"s": 52.547,
+"e": 55.532,
+"ratio": 0.88,
+"t": "Neolitik dönemle birlikte insanlar yerleşik hayata"
+},
+{
+"tag": "S02",
+"s": 55.99,
+"e": 59.802,
+"ratio": 0.95,
+"t": "toprağı işlemeye, hayvan beslemeye, çanak çömlek y"
+},
+{
+"tag": "S02",
+"s": 60.725,
+"e": 65.98,
+"ratio": 0.95,
+"t": "Bu yüzden o döneme kadarki matematik ihtiyacıyla s"
+},
+{
+"tag": "S02",
+"s": 66.914,
+"e": 71.016,
+"ratio": 0.97,
+"t": "Neolitik dönemde matematiğe, dolayısıyla bilime du"
+},
+{
+"tag": "S03*",
+"s": 72.408,
+"e": 76.093,
+"ratio": 1.01,
+"t": "Mısırlılara gelince, onlar Nil Nehri'nin çevresind"
+},
+{
+"tag": "S03",
+"s": 76.874,
+"e": 82.614,
+"ratio": 1.13,
+"t": "Haritada gördüğümüz Sais, Menfis ve Tinis gibi yer"
+},
+{
+"tag": "S03",
+"s": 83.611,
+"e": 84.673,
+"ratio": 0.67,
+"t": "Daha önce de söylemiştik:"
+},
+{
+"tag": "S03",
+"s": 85.202,
+"e": 90.125,
+"ratio": 0.99,
+"t": "Eski uygarlıklar çoğunlukla nehir kenarlarına, baz"
+},
+{
+"tag": "S04*",
+"s": 91.526,
+"e": 96.121,
+"ratio": 0.95,
+"t": "Mısır matematiği bize milattan önce üç bin beş yüz"
+},
+{
+"tag": "S04",
+"s": 96.716,
+"e": 105.829,
+"ratio": 1.1,
+"t": "Ancak elimizdeki bilgilerin büyük kısmı Orta Krall"
+},
+{
+"tag": "S04",
+"s": 106.711,
+"e": 109.977,
+"ratio": 0.92,
+"t": "Mısır matematiğine dair yazılı papirüslerin çoğu b"
+},
+{
+"tag": "S05*",
+"s": 111.485,
+"e": 119.306,
+"ratio": 1.04,
+"t": "Mısır'da ve ileride göreceğimiz pek çok uygarlıkta"
+},
+{
+"tag": "S05",
+"s": 120.345,
+"e": 121.426,
+"ratio": 0.66,
+"t": "Bunu bir örnekle açıklayalım."
+},
+{
+"tag": "S05",
+"s": 122.298,
+"e": 126.403,
+"ratio": 0.97,
+"t": "Nil Nehri taştığında tarlaların, yani parsellerin "
+},
+{
+"tag": "S05",
+"s": 126.992,
+"e": 131.429,
+"ratio": 0.89,
+"t": "Bu alanları yeniden doğru hesaplayabilmek için geo"
+},
+{
+"tag": "S05",
+"s": 131.937,
+"e": 134.448,
+"ratio": 0.97,
+"t": "Taşkın aynı zamanda bir astronomi olayıydı;"
+},
+{
+"tag": "S05",
+"s": 135.054,
+"e": 139.314,
+"ratio": 1.01,
+"t": "nehrin ne zaman taşacağını önceden kestirebilmek i"
+},
+{
+"tag": "S05",
+"s": 140.26,
+"e": 144.579,
+"ratio": 0.89,
+"t": "Kısacası bu bilim dalları, aynı sorunu çözmek için"
+},
+{
+"tag": "TALIMAT",
+"s": 145.255,
+"e": 150.518,
+"ratio": 1.02,
+"t": "Aşağıdaki metni Türkçe olarak, matematik tarihi an"
+},
+{
+"tag": "TALIMAT",
+"s": 151.472,
+"e": 154.549,
+"ratio": 1.3,
+"t": "Ton sakin, sıcak ve anlaşılır olsun;"
+},
+{
+"tag": "TALIMAT",
+"s": 154.898,
+"e": 156.917,
+"ratio": 1.12,
+"t": "hız orta, ne aceleci ne ağır."
+},
+{
+"tag": "TALIMAT",
+"s": 157.84,
+"e": 163.06,
+"ratio": 1.06,
+"t": "Cümle sonlarında doğal bir duraklama yap, her para"
+},
+{
+"tag": "TALIMAT",
+"s": 163.898,
+"e": 166.028,
+"ratio": 0.92,
+"t": "Sayıları ve tarihleri yazıldığı gibi oku."
+},
+{
+"tag": "TALIMAT",
+"s": 166.936,
+"e": 169.302,
+"ratio": 0.95,
+"t": "Metne bir şey ekleme, hiçbir şeyi atlama."
+},
+{
+"tag": "S06*",
+"s": 172.565,
+"e": 175.593,
+"ratio": 1.03,
+"t": "Mısır matematiğine dair kaynaklarımız papirüslerdi"
+},
+{
+"tag": "S06",
+"s": 176.221,
+"e": 181.703,
+"ratio": 1.07,
+"t": "Papirüs, Nil kıyısında yetişen papirüs bitkisinin "
+},
+{
+"tag": "S06",
+"s": 182.299,
+"e": 184.754,
+"ratio": 0.81,
+"t": "Bu yüzden ömrü uzun değildir, saklanması da zordur"
+},
+{
+"tag": "S06",
+"s": 185.214,
+"e": 191.385,
+"ratio": 1.02,
+"t": "Elimizdeki papirüsler çoğu zaman özgün metnin kend"
+},
+{
+"tag": "S06",
+"s": 192.905,
+"e": 195.737,
+"ratio": 0.88,
+"t": "İçinde yoğun olarak matematik bulunan iki papirüs "
+},
+{
+"tag": "S06",
+"s": 196.166,
+"e": 199.712,
+"ratio": 1.28,
+"t": "Rind, yani Ahmes Papirüsü ve Moskova Papirüsü."
+},
+{
+"tag": "S06",
+"s": 200.753,
+"e": 202.341,
+"ratio": 0.94,
+"t": "İkisi birbirine çok benzer;"
+},
+{
+"tag": "S06",
+"s": 202.752,
+"e": 207.535,
+"ratio": 0.94,
+"t": "Mısır matematiğine dair bildiklerimizin neredeyse "
+},
+{
+"tag": "S07*",
+"s": 208.328,
+"e": 211.281,
+"ratio": 1.16,
+"t": "Şimdi Rind Papirüsü'ne daha yakından bakalım."
+},
+{
+"tag": "S07",
+"s": 212.162,
+"e": 216.028,
+"ratio": 0.91,
+"t": "Milattan önce bin altı yüz elli yılında yazıldığı "
+},
+{
+"tag": "S07",
+"s": 216.263,
+"e": 223.588,
+"ratio": 1.05,
+"t": "cebir, geometri, trigonometri ve bölme gibi konula"
+},
+{
+"tag": "S07",
+"s": 224.632,
+"e": 228.996,
+"ratio": 1.12,
+"t": "Otuz santimetre genişliğindedir, açıldığında beş m"
+},
+{
+"tag": "S07",
+"s": 229.365,
+"e": 231.353,
+"ratio": 1.04,
+"t": "Bugün British Museum'da bulunuyor."
+},
+{
+"tag": "S07",
+"s": 232.356,
+"e": 238.92,
+"ratio": 1.04,
+"t": "Adını, onu bin sekiz yüz elli sekiz yılında Nil kı"
+},
+{
+"tag": "S07",
+"s": 239.991,
+"e": 244.817,
+"ratio": 0.97,
+"t": "Yaklaşık iki yüz yıl öncesine, Orta Krallık dönemi"
+},
+{
+"tag": "S07",
+"s": 245.429,
+"e": 248.087,
+"ratio": 0.87,
+"t": "Burada dikkat etmemiz gereken önemli bir nokta var"
+},
+{
+"tag": "S07",
+"s": 248.526,
+"e": 255.204,
+"ratio": 0.96,
+"t": "Papirüs milattan önce bin altı yüz elli yılında ya"
+},
+{
+"tag": "S07",
+"s": 255.779,
+"e": 258.196,
+"ratio": 0.97,
+"t": "Tablolardan ve seksen beş problemden oluşur."
+},
+{
+"tag": "S08*",
+"s": 259.045,
+"e": 263.909,
+"ratio": 1.05,
+"t": "Papirüsteki tablolar arasında en çok dikkatimizi ç"
+},
+{
+"tag": "S08",
+"s": 264.531,
+"e": 269.598,
+"ratio": 0.98,
+"t": "Bu tablo, payı iki olan kesirlerin birim kesirler "
+},
+{
+"tag": "S08",
+"s": 270.234,
+"e": 272.337,
+"ratio": 1.33,
+"t": "Gelelim Moskova Papirüsü'ne."
+},
+{
+"tag": "S08",
+"s": 272.647,
+"e": 279.929,
+"ratio": 0.89,
+"t": "Milattan önce bin sekiz yüz doksan yılında yazıldı"
+},
+{
+"tag": "S08",
+"s": 280.618,
+"e": 284.609,
+"ratio": 0.96,
+"t": "O da birim kesirlerin listesini içeriyor ve yirmi "
+},
+{
+"tag": "S08",
+"s": 285.412,
+"e": 289.594,
+"ratio": 0.93,
+"t": "Özellikli iki problem dışında kalanlar, Rind Papir"
+},
+{
+"tag": "S09*",
+"s": 290.523,
+"e": 291.911,
+"ratio": 1.45,
+"t": "Gelelim sayılara."
+},
+{
+"tag": "S09",
+"s": 292.579,
+"e": 297.201,
+"ratio": 1.71,
+"t": "Mısırlılar onluk sayı sistemini kullanıyordu;"
+},
+{
+"tag": "S09",
+"s": 298.008,
+"e": 299.66,
+"ratio": 0.77,
+"t": "ancak bu, ilkel bir onluk sistemdi."
+},
+{
+"tag": "S09",
+"s": 300.35,
+"e": 305.209,
+"ratio": 0.88,
+"t": "Biri düz bir çizgiyle, onu nal biçiminde bir işare"
+},
+{
+"tag": "S09",
+"s": 305.691,
+"e": 313.645,
+"ratio": 1.2,
+"t": "Bin için nilüfer, on bin için parmak, yüz bin için"
+},
+{
+"tag": "S09",
+"s": 314.597,
+"e": 318.16,
+"ratio": 0.96,
+"t": "Bir sayıyı yazarken bu simgeleri gerektiği kadar t"
+},
+{
+"tag": "S09",
+"s": 319.028,
+"e": 326.448,
+"ratio": 1.19,
+"t": "Örneğin on üç yazacaklarsa önce büyük basamağı, ya"
+},
+{
+"tag": "S09",
+"s": 327.083,
+"e": 329.712,
+"ratio": 1.11,
+"t": "Buna ilkel bir onluk sayı sistemi diyoruz."
+},
+{
+"tag": "S10*",
+"s": 330.375,
+"e": 335.485,
+"ratio": 1.05,
+"t": "Toplama, çıkarma, çarpma, bölme ve karekök alma iş"
+},
+{
+"tag": "S10",
+"s": 336.058,
+"e": 339.664,
+"ratio": 0.96,
+"t": "Toplamayı biliyorlardı ama sayıları ikişer ikişer "
+},
+{
+"tag": "S10",
+"s": 339.982,
+"e": 342.916,
+"ratio": 0.95,
+"t": "üç sayıyı yan yana yazıp tek seferde toplayamıyorl"
+},
+{
+"tag": "S10",
+"s": 343.58,
+"e": 345.961,
+"ratio": 0.94,
+"t": "Çıkarmayı da toplama mantığıyla yapıyorlardı."
+},
+{
+"tag": "S10",
+"s": 346.366,
+"e": 352.349,
+"ratio": 1.07,
+"t": "Çarpma ve bölmeyi ise tekrarlı toplamayla, yani sa"
+},
+{
+"tag": "S10",
+"s": 352.964,
+"e": 357.359,
+"ratio": 0.91,
+"t": "Karekök alabildiklerini, yani bir sayının karekökü"
+},
+{
+"tag": "S10",
+"s": 357.705,
+"e": 360.456,
+"ratio": 0.98,
+"t": "ama bunu nasıl yaptıklarına dair bir bilgimiz yok."
+},
+{
+"tag": "S10",
+"s": 361.179,
+"e": 364.366,
+"ratio": 1.09,
+"t": "Kısacası bütün işlemlerinin temelinde toplama vard"
+},
+{
+"tag": "TALIMAT",
+"s": 365.207,
+"e": 369.943,
+"ratio": 0.91,
+"t": "Aşağıdaki metni Türkçe olarak, matematik tarihi an"
+},
+{
+"tag": "TALIMAT",
+"s": 370.66,
+"e": 373.005,
+"ratio": 0.99,
+"t": "Ton sakin, sıcak ve anlaşılır olsun;"
+},
+{
+"tag": "TALIMAT",
+"s": 373.63,
+"e": 376.402,
+"ratio": 1.54,
+"t": "hız orta, ne aceleci ne ağır."
+},
+{
+"tag": "TALIMAT",
+"s": 377.62,
+"e": 382.632,
+"ratio": 1.02,
+"t": "Cümle sonlarında doğal bir duraklama yap, her para"
+},
+{
+"tag": "TALIMAT",
+"s": 383.91,
+"e": 386.202,
+"ratio": 0.99,
+"t": "Sayıları ve tarihleri yazıldığı gibi oku."
+},
+{
+"tag": "TALIMAT",
+"s": 386.866,
+"e": 389.394,
+"ratio": 1.02,
+"t": "Metne bir şey ekleme, hiçbir şeyi atlama."
+},
+{
+"tag": "S11*",
+"s": 391.234,
+"e": 396.589,
+"ratio": 0.96,
+"t": "Kesirleri, az önce sözünü ettiğimiz tablodan yarar"
+},
+{
+"tag": "S11",
+"s": 397.609,
+"e": 401.31,
+"ratio": 0.95,
+"t": "Bu tabloyu adeta bir cetvel gibi ellerinin altında"
+},
+{
+"tag": "S11",
+"s": 402.354,
+"e": 411.791,
+"ratio": 1.05,
+"t": "Örneğin iki bölü yirmi dokuz kesrini bir bölü yirm"
+},
+{
+"tag": "S11",
+"s": 412.951,
+"e": 418.776,
+"ratio": 1.03,
+"t": "Üstelik bu kesirleri aralarına hiçbir işaret koyma"
+},
+{
+"tag": "S12*",
+"s": 420.273,
+"e": 423.937,
+"ratio": 0.93,
+"t": "Geometride dörtgenin alanını yaklaşık olarak hesap"
+},
+{
+"tag": "S12",
+"s": 424.672,
+"e": 426.024,
+"ratio": 0.86,
+"t": "tam formülünü bilmiyorlardı."
+},
+{
+"tag": "S12",
+"s": 426.932,
+"e": 429.1,
+"ratio": 0.89,
+"t": "Üçgendeki belirli oranları da biliyorlardı."
+},
+{
+"tag": "S12",
+"s": 430.077,
+"e": 434.413,
+"ratio": 0.93,
+"t": "Üçgendeki oranların sabit kaldığından yola çıkarak"
+},
+{
+"tag": "S12",
+"s": 435.059,
+"e": 438.037,
+"ratio": 0.9,
+"t": "bu da trigonometriye dair bilgilerinin olduğunu gö"
+},
+{
+"tag": "S12",
+"s": 439.214,
+"e": 442.483,
+"ratio": 0.98,
+"t": "Pi sayısını yaklaşık olarak on dokuz bölü altı alı"
+},
+{
+"tag": "S12",
+"s": 443.358,
+"e": 445.365,
+"ratio": 0.76,
+"t": "Pisagor teoremini bildiklerini de biliyoruz;"
+},
+{
+"tag": "S12",
+"s": 446.113,
+"e": 448.151,
+"ratio": 1.21,
+"t": "onlara ip gericiler deniyordu."
+},
+{
+"tag": "S12",
+"s": 448.872,
+"e": 457.415,
+"ratio": 1.08,
+"t": "Ellerindeki üç, dört ve beş birim uzunluğundaki ip"
+},
+{
+"tag": "S13*",
+"s": 458.525,
+"e": 462.385,
+"ratio": 0.99,
+"t": "Mısır matematiğinin zayıflıklarına geçmeden önce c"
+},
+{
+"tag": "S13",
+"s": 463.256,
+"e": 467.392,
+"ratio": 0.86,
+"t": "Birinci ve ikinci dereceden denklemlerle ilgili çö"
+},
+{
+"tag": "S13",
+"s": 468.339,
+"e": 471.358,
+"ratio": 0.91,
+"t": "Elbette problem çözerken değişken kullanmayı bilmi"
+},
+{
+"tag": "S13",
+"s": 472.098,
+"e": 479.864,
+"ratio": 1.04,
+"t": "Yine de tek bilinmeyenle çözülebilen problemleri v"
+},
+{
+"tag": "S14*",
+"s": 480.872,
+"e": 482.887,
+"ratio": 0.83,
+"t": "Gelelim Mısır matematiğinin zayıflıklarına."
+},
+{
+"tag": "S14",
+"s": 483.884,
+"e": 485.957,
+"ratio": 0.88,
+"t": "Papirüslerde teorik bir açıklama bulunmaz."
+},
+{
+"tag": "S14",
+"s": 486.709,
+"e": 490.311,
+"ratio": 1.0,
+"t": "Metinler genellikle emir kipinde yazılmış tarifler"
+},
+{
+"tag": "S14",
+"s": 490.927,
+"e": 492.87,
+"ratio": 1.01,
+"t": "şunu şöyle yap, bunu böyle yap."
+},
+{
+"tag": "S14",
+"s": 493.248,
+"e": 497.349,
+"ratio": 0.92,
+"t": "Yani belli bir problem türüyle karşılaştığında ne "
+},
+{
+"tag": "S14",
+"s": 497.612,
+"e": 498.874,
+"ratio": 0.9,
+"t": "temelde hesaplama içerir."
+},
+{
+"tag": "S14",
+"s": 499.382,
+"e": 501.331,
+"ratio": 0.96,
+"t": "Teoriye hemen hiç yer verilmemiştir."
+},
+{
+"tag": "S14",
+"s": 501.642,
+"e": 507.757,
+"ratio": 1.12,
+"t": "Yalnızca bazı yerlerde, hesaplamanın nereden geldi"
+},
+{
+"tag": "S14",
+"s": 508.12,
+"e": 512.58,
+"ratio": 1.0,
+"t": "Kısacası Mısırlıların yaptığı, uygulamalı matemati"
+},
+{
+"tag": "S15*",
+"s": 513.21,
+"e": 521.629,
+"ratio": 0.95,
+"t": "Bir sonraki bölümde işleyeceğimiz Mezopotamya uyga"
+},
+{
+"tag": "S15",
+"s": 522.028,
+"e": 529.74,
+"ratio": 1.02,
+"t": "Mezopotamya coğrafi ve sosyal açıdan daha elverişs"
+},
+{
+"tag": "S15",
+"s": 530.312,
+"e": 536.081,
+"ratio": 0.93,
+"t": "Mısırlıların işlemleri yalnızca toplama etrafında "
+},
+{
+"tag": "S15",
+"s": 536.536,
+"e": 538.32,
+"ratio": 0.9,
+"t": "Bir sonraki videoda görüşmek üzere!"
+}
+]

@@ -8,3 +8,4 @@ cikti/*.log
 **/cikti/*.log
 __pycache__/
 bolum02/ses_birlesik*
+bolum02/ses_kaynak/*.wav

@@ -1,0 +1,115 @@
+iter 0 cost -22.19 rate 17.73 char/s
+iter 1 cost -23.13 rate 17.75 char/s
+iter 2 cost -23.13 rate 17.75 char/s
+TALIMAT     0.21-   4.88  0.90 Aşağıdaki metni Türkçe olarak, matematik tarihi an
+TALIMAT     5.73-   8.22  1.05 Ton sakin, sıcak ve anlaşılır olsun;
+TALIMAT     8.62-  10.87  1.24 hız orta, ne aceleci ne ağır.
+TALIMAT    11.52-  16.35  0.98 Cümle sonlarında doğal bir duraklama yap, her para
+TALIMAT    17.14-  19.21  0.89 Sayıları ve tarihleri yazıldığı gibi oku.
+TALIMAT    19.67-  21.88  0.89 Metne bir şey ekleme, hiçbir şeyi atlama.
+S01*       23.43-  23.89  1.03 Merhaba!
+S01        24.31-  28.59  1.04 Bugünkü matematik tarihi videomuzun konusu, Mısır 
+S01        29.42-  36.95  1.09 Mısırlıların nasıl saydığını, nasıl hesap yaptığın
+S02*       38.76-  41.58  0.88 Bu döneme geçmeden önce eski çağları kısaca hatırl
+S02        42.54-  47.31  0.99 Taş Çağı'nın neolitik dönemine, yani Cilalı Taş Ça
+S02        47.93-  51.45  1.18 Dolayısıyla tarım, hayvancılık ve üretim de yoktu.
+S02        52.55-  55.53  0.88 Neolitik dönemle birlikte insanlar yerleşik hayata
+S02        55.99-  59.80  0.95 toprağı işlemeye, hayvan beslemeye, çanak çömlek y
+S02        60.73-  65.98  0.95 Bu yüzden o döneme kadarki matematik ihtiyacıyla s
+S02        66.91-  71.02  0.97 Neolitik dönemde matematiğe, dolayısıyla bilime du
+S03*       72.41-  76.09  1.01 Mısırlılara gelince, onlar Nil Nehri'nin çevresind
+S03        76.87-  82.61  1.13 Haritada gördüğümüz Sais, Menfis ve Tinis gibi yer
+S03        83.61-  84.67  0.67 Daha önce de söylemiştik:
+S03        85.20-  90.12  0.99 Eski uygarlıklar çoğunlukla nehir kenarlarına, baz
+S04*       91.53-  96.12  0.95 Mısır matematiği bize milattan önce üç bin beş yüz
+S04        96.72- 105.83  1.10 Ancak elimizdeki bilgilerin büyük kısmı Orta Krall
+S04       106.71- 109.98  0.92 Mısır matematiğine dair yazılı papirüslerin çoğu b
+S05*      111.48- 119.31  1.04 Mısır'da ve ileride göreceğimiz pek çok uygarlıkta
+S05       120.34- 121.43  0.66 Bunu bir örnekle açıklayalım.
+S05       122.30- 126.40  0.97 Nil Nehri taştığında tarlaların, yani parsellerin 
+S05       126.99- 131.43  0.89 Bu alanları yeniden doğru hesaplayabilmek için geo
+S05       131.94- 134.45  0.97 Taşkın aynı zamanda bir astronomi olayıydı;
+S05       135.05- 139.31  1.01 nehrin ne zaman taşacağını önceden kestirebilmek i
+S05       140.26- 144.58  0.89 Kısacası bu bilim dalları, aynı sorunu çözmek için
+TALIMAT   145.25- 150.52  1.02 Aşağıdaki metni Türkçe olarak, matematik tarihi an
+TALIMAT   151.47- 154.55  1.30 Ton sakin, sıcak ve anlaşılır olsun;
+TALIMAT   154.90- 156.92  1.12 hız orta, ne aceleci ne ağır.
+TALIMAT   157.84- 163.06  1.06 Cümle sonlarında doğal bir duraklama yap, her para
+TALIMAT   163.90- 166.03  0.92 Sayıları ve tarihleri yazıldığı gibi oku.
+TALIMAT   166.94- 169.30  0.95 Metne bir şey ekleme, hiçbir şeyi atlama.
+S06*      172.56- 175.59  1.03 Mısır matematiğine dair kaynaklarımız papirüslerdi
+S06       176.22- 181.70  1.07 Papirüs, Nil kıyısında yetişen papirüs bitkisinin 
+S06       182.30- 184.75  0.81 Bu yüzden ömrü uzun değildir, saklanması da zordur
+S06       185.21- 191.38  1.02 Elimizdeki papirüsler çoğu zaman özgün metnin kend
+S06       192.91- 195.74  0.88 İçinde yoğun olarak matematik bulunan iki papirüs 
+S06       196.17- 199.71  1.28 Rind, yani Ahmes Papirüsü ve Moskova Papirüsü.
+S06       200.75- 202.34  0.94 İkisi birbirine çok benzer;
+S06       202.75- 207.53  0.94 Mısır matematiğine dair bildiklerimizin neredeyse 
+S07*      208.33- 211.28  1.16 Şimdi Rind Papirüsü'ne daha yakından bakalım.
+S07       212.16- 216.03  0.91 Milattan önce bin altı yüz elli yılında yazıldığı 
+S07       216.26- 223.59  1.05 cebir, geometri, trigonometri ve bölme gibi konula
+S07       224.63- 229.00  1.12 Otuz santimetre genişliğindedir, açıldığında beş m
+S07       229.37- 231.35  1.04 Bugün British Museum'da bulunuyor.
+S07       232.36- 238.92  1.04 Adını, onu bin sekiz yüz elli sekiz yılında Nil kı
+S07       239.99- 244.82  0.97 Yaklaşık iki yüz yıl öncesine, Orta Krallık dönemi
+S07       245.43- 248.09  0.87 Burada dikkat etmemiz gereken önemli bir nokta var
+S07       248.53- 255.20  0.96 Papirüs milattan önce bin altı yüz elli yılında ya
+S07       255.78- 258.20  0.97 Tablolardan ve seksen beş problemden oluşur.
+S08*      259.05- 263.91  1.05 Papirüsteki tablolar arasında en çok dikkatimizi ç
+S08       264.53- 269.60  0.98 Bu tablo, payı iki olan kesirlerin birim kesirler 
+S08       270.23- 272.34  1.33 Gelelim Moskova Papirüsü'ne.
+S08       272.65- 279.93  0.89 Milattan önce bin sekiz yüz doksan yılında yazıldı
+S08       280.62- 284.61  0.96 O da birim kesirlerin listesini içeriyor ve yirmi 
+S08       285.41- 289.59  0.93 Özellikli iki problem dışında kalanlar, Rind Papir
+S09*      290.52- 291.91  1.45 Gelelim sayılara.
+S09       292.58- 297.20  1.71 Mısırlılar onluk sayı sistemini kullanıyordu;
+S09       298.01- 299.66  0.77 ancak bu, ilkel bir onluk sistemdi.
+S09       300.35- 305.21  0.88 Biri düz bir çizgiyle, onu nal biçiminde bir işare
+S09       305.69- 313.64  1.20 Bin için nilüfer, on bin için parmak, yüz bin için
+S09       314.60- 318.16  0.96 Bir sayıyı yazarken bu simgeleri gerektiği kadar t
+S09       319.03- 326.45  1.19 Örneğin on üç yazacaklarsa önce büyük basamağı, ya
+S09       327.08- 329.71  1.11 Buna ilkel bir onluk sayı sistemi diyoruz.
+S10*      330.38- 335.49  1.05 Toplama, çıkarma, çarpma, bölme ve karekök alma iş
+S10       336.06- 339.66  0.96 Toplamayı biliyorlardı ama sayıları ikişer ikişer 
+S10       339.98- 342.92  0.95 üç sayıyı yan yana yazıp tek seferde toplayamıyorl
+S10       343.58- 345.96  0.94 Çıkarmayı da toplama mantığıyla yapıyorlardı.
+S10       346.37- 352.35  1.07 Çarpma ve bölmeyi ise tekrarlı toplamayla, yani sa
+S10       352.96- 357.36  0.91 Karekök alabildiklerini, yani bir sayının karekökü
+S10       357.70- 360.46  0.98 ama bunu nasıl yaptıklarına dair bir bilgimiz yok.
+S10       361.18- 364.37  1.09 Kısacası bütün işlemlerinin temelinde toplama vard
+TALIMAT   365.21- 369.94  0.91 Aşağıdaki metni Türkçe olarak, matematik tarihi an
+TALIMAT   370.66- 373.00  0.99 Ton sakin, sıcak ve anlaşılır olsun;
+TALIMAT   373.63- 376.40  1.54 hız orta, ne aceleci ne ağır.
+TALIMAT   377.62- 382.63  1.02 Cümle sonlarında doğal bir duraklama yap, her para
+TALIMAT   383.91- 386.20  0.99 Sayıları ve tarihleri yazıldığı gibi oku.
+TALIMAT   386.87- 389.39  1.02 Metne bir şey ekleme, hiçbir şeyi atlama.
+S11*      391.23- 396.59  0.96 Kesirleri, az önce sözünü ettiğimiz tablodan yarar
+S11       397.61- 401.31  0.95 Bu tabloyu adeta bir cetvel gibi ellerinin altında
+S11       402.35- 411.79  1.05 Örneğin iki bölü yirmi dokuz kesrini bir bölü yirm
+S11       412.95- 418.78  1.03 Üstelik bu kesirleri aralarına hiçbir işaret koyma
+S12*      420.27- 423.94  0.93 Geometride dörtgenin alanını yaklaşık olarak hesap
+S12       424.67- 426.02  0.86 tam formülünü bilmiyorlardı.
+S12       426.93- 429.10  0.89 Üçgendeki belirli oranları da biliyorlardı.
+S12       430.08- 434.41  0.93 Üçgendeki oranların sabit kaldığından yola çıkarak
+S12       435.06- 438.04  0.90 bu da trigonometriye dair bilgilerinin olduğunu gö
+S12       439.21- 442.48  0.98 Pi sayısını yaklaşık olarak on dokuz bölü altı alı
+S12       443.36- 445.37  0.76 Pisagor teoremini bildiklerini de biliyoruz;
+S12       446.11- 448.15  1.21 onlara ip gericiler deniyordu.
+S12       448.87- 457.42  1.08 Ellerindeki üç, dört ve beş birim uzunluğundaki ip
+S13*      458.52- 462.38  0.99 Mısır matematiğinin zayıflıklarına geçmeden önce c
+S13       463.26- 467.39  0.86 Birinci ve ikinci dereceden denklemlerle ilgili çö
+S13       468.34- 471.36  0.91 Elbette problem çözerken değişken kullanmayı bilmi
+S13       472.10- 479.86  1.04 Yine de tek bilinmeyenle çözülebilen problemleri v
+S14*      480.87- 482.89  0.83 Gelelim Mısır matematiğinin zayıflıklarına.
+S14       483.88- 485.96  0.88 Papirüslerde teorik bir açıklama bulunmaz.
+S14       486.71- 490.31  1.00 Metinler genellikle emir kipinde yazılmış tarifler
+S14       490.93- 492.87  1.01 şunu şöyle yap, bunu böyle yap.
+S14       493.25- 497.35  0.92 Yani belli bir problem türüyle karşılaştığında ne 
+S14       497.61- 498.87  0.90 temelde hesaplama içerir.
+S14       499.38- 501.33  0.96 Teoriye hemen hiç yer verilmemiştir.
+S14       501.64- 507.76  1.12 Yalnızca bazı yerlerde, hesaplamanın nereden geldi
+S14       508.12- 512.58  1.00 Kısacası Mısırlıların yaptığı, uygulamalı matemati
+S15*      513.21- 521.63  0.95 Bir sonraki bölümde işleyeceğimiz Mezopotamya uyga
+S15       522.03- 529.74  1.02 Mezopotamya coğrafi ve sosyal açıdan daha elverişs
+S15       530.31- 536.08  0.93 Mısırlıların işlemleri yalnızca toplama etrafında 
+S15       536.54- 538.32  0.90 Bir sonraki videoda görüşmek üzere!

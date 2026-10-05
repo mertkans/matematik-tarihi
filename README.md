@@ -32,7 +32,8 @@ Her şey `bolum02/` klasöründe; animasyon kökteki `animasyon/vendor/` dosyala
 | `bolum02/animasyon/index.html` | Animasyonun kaynağı (tarayıcıda açılabilir) |
 | `bolum02/seslendirme_elevenlabs.md` | Sahne sahne seslendirme metni, dosya adları, sessiz videodaki zamanlar |
 | `bolum02/seslendirme_tek_parca.txt` | Aynı metin, tek parça |
-| `bolum02/seslendirme_ai_studio.txt` | Google AI Studio için: stil talimatlı, üç parça |
+| `bolum02/seslendirme_ai_studio.txt` | Google AI Studio için yalnızca anlatım metni (metin kutusuna) |
+| `bolum02/ai_studio_stil_talimati.txt` | AI Studio "Style instructions" alanına yazılacak talimat |
 
 ```bash
 npm run render:02                                   # sessiz video → bolum02/cikti/matematik_tarihi_misir_donemi_sessiz.mp4
